@@ -1,0 +1,391 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   NOCTURNE MARITIME — OilWatch AI Design System
+   Sourced directly from FRONTEND-DESIGN/nocturne_maritime/DESIGN.md
+   ========================================================= */
+
+@layer base {
+  :root {
+    /* Surface hierarchy */
+    --color-surface: #131315;
+    --color-surface-dim: #131315;
+  --color-surface-bright: #39393b;
+  --color-surface-container-lowest: #0e0e10;
+  --color-surface-container-low: #1c1b1d;
+  --color-surface-container: #201f22;
+  --color-surface-container-high: #2a2a2c;
+  --color-surface-container-highest: #353437;
+  --color-on-surface: #e5e1e4;
+  --color-on-surface-variant: #d8c3ad;
+
+  /* Functional accent — Signal Amber */
+  --color-primary: #ffc174;
+  --color-on-primary: #472a00;
+  --color-primary-container: #f59e0b;
+  --color-on-primary-container: #613b00;
+  --color-signal-amber: #f59e0b;
+
+  /* Electric Cyan — AIS / telemetry accent */
+  --color-secondary: #4cd7f6;
+  --color-on-secondary: #003640;
+  --color-secondary-container: #03b5d3;
+  --color-electric-cyan: #06b6d4;
+
+  /* Tertiary */
+  --color-tertiary: #8fd5ff;
+
+  /* Error */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+
+  /* Outline */
+  --color-outline: #a08e7a;
+  --color-outline-variant: #534434;
+
+  /* Deep void base */
+  --color-void: #09090b;
+  --color-elevation-1: #0f0f11;
+  --color-elevation-2: #18181b;
+  --color-elevation-3: #27272a;
+
+  /* Muted grays */
+  --color-muted: #71717a;
+  --color-muted-light: #a1a1aa;
+
+  /* High-contrast text */
+  --color-text-primary: #f4f4f5;
+  --color-text-white: #ffffff;
+
+  /* Spacing — from DESIGN.md */
+  --spacing-hud-edge-desktop: 1.5rem;
+  --spacing-hud-edge-mobile: 0.75rem;
+  --spacing-panel-gap: 0.75rem;
+  --spacing-stack-compact: 0.25rem;
+  --spacing-stack-default: 0.5rem;
+  --spacing-stack-relaxed: 1rem;
+  --spacing-inset-panel: 1.25rem;
+  --spacing-inset-panel-compact: 0.75rem;
+
+  /* Border radii */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-void);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   TYPOGRAPHY CLASSES — from DESIGN.md spec
+   ========================================================= */
+
+.text-headline-xl {
+  font-family: var(--font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+}
+
+.text-headline-lg {
+  font-family: var(--font-sans);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-md {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+}
+
+.text-headline-sm {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+}
+
+.text-body-md {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+
+.text-body-sm {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}
+
+/* JetBrains Mono for technical readouts — coordinates, MMSI, timestamps, speed */
+.text-label-lg {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.text-label-md {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.text-label-sm {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ELEVATION — Glassmorphism Layers
+   ========================================================= */
+
+.glass-level-1 {
+  background: rgba(15, 15, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-level-2 {
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6);
+}
+
+.glass-level-3 {
+  background: rgba(39, 39, 42, 0.85);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.85);
+}
+
+/* =========================================================
+   COMPONENT PRIMITIVES
+   ========================================================= */
+
+/* Primary Signal Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-default);
+  color: var(--color-text-white);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal-amber);
+  box-shadow: 0 0 6px var(--color-signal-amber);
+}
+
+.btn-primary:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: var(--color-signal-amber);
+}
+
+/* Ghost HUD Button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-default);
+  color: var(--color-muted-light);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-white);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Floating telemetry pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--color-text-white);
+}
+
+.pill-label {
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+/* Signal anomaly badge */
+.badge-anomaly {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--color-signal-amber);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-anomaly::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-signal-amber);
+  animation: pulse-amber 2s infinite;
+}
+
+@keyframes pulse-amber {
+  0%, 100% { opacity: 1; box-shadow: 0 0 4px var(--color-signal-amber); }
+  50% { opacity: 0.5; box-shadow: 0 0 8px var(--color-signal-amber); }
+}
+
+/* Floating HUD panel */
+.hud-panel {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-inset-panel);
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Hairline divider */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: var(--spacing-stack-relaxed) 0;
+}
+
+/* Input fields — borderless, Linear-style */
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-white);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.input-field::placeholder {
+  color: var(--color-muted);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
