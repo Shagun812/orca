@@ -1,0 +1,70 @@
+
+{
+  "event_time": "2026-09-08T12:00:00Z",
+  "origin_zone": {
+    "type": "Polygon",
+    "coordinates": [[
+      [77.00, 13.00],
+      [77.20, 13.00],
+      [77.20, 13.20],
+      [77.00, 13.20],
+      [77.00, 13.00]
+    ]],
+    "center": {
+      "latitude": 13.10,
+      "longitude": 77.10
+    },
+    "radius_km": 10
+  },
+  "time_window": {
+    "start": "2026-09-07T12:00:00Z",
+    "end": "2026-09-08T12:00:00Z"
+  },
+  "search_buffer_km": 20,
+  "ais_positions": [
+    {
+      "mmsi": "111000111",
+      "timestamp": "2026-09-08T10:00:00Z",
+      "latitude": 13.105,
+      "longitude": 77.105,
+      "speed_knots": 8.5,
+      "course_deg": 90,
+      "heading_deg": 90,
+      "vessel_type": "Tanker",
+      "vessel_name": "DEMO TANKER A"
+    },
+    {
+      "mmsi": "111000111",
+      "timestamp": "2026-09-08T11:00:00Z",
+      "latitude": 13.106,
+      "longitude": 77.115,
+      "speed_knots": 8.7,
+      "course_deg": 90,
+      "heading_deg": 90,
+      "vessel_type": "Tanker",
+      "vessel_name": "DEMO TANKER A"
+    },
+    {
+      "mmsi": "222000222",
+      "timestamp": "2026-09-08T09:00:00Z",
+      "latitude": 13.15,
+      "longitude": 77.18,
+      "speed_knots": 12,
+      "course_deg": 270,
+      "heading_deg": 270,
+      "vessel_type": "Cargo",
+      "vessel_name": "DEMO CARGO B"
+    },
+    {
+      "mmsi": "222000222",
+      "timestamp": "2026-09-08T10:00:00Z",
+      "latitude": 13.15,
+      "longitude": 77.17,
+      "speed_knots": 12,
+      "course_deg": 270,
+      "heading_deg": 270,
+      "vessel_type": "Cargo",
+      "vessel_name": "DEMO CARGO B"
+    }
+  ]
+}

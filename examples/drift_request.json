@@ -1,0 +1,17 @@
+
+{
+  "spill_geometry": {
+    "type": "Polygon",
+    "coordinates": [[
+      [77.08, 13.08],
+      [77.12, 13.08],
+      [77.12, 13.12],
+      [77.08, 13.12],
+      [77.08, 13.08]
+    ]]
+  },
+  "observed_at": "2026-09-08T12:00:00Z",
+  "lookback_hours": 24,
+  "forecast_hours": 24,
+  "origin_buffer_km": 10
+}
