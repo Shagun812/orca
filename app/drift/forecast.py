@@ -1,21 +1,19 @@
 
-from app.drift.environmental_data import default_environment
 from app.drift.particle_model import Particle, advect
 from app.schemas.drift import DriftRequest, DriftResponse
 
 
 def run_forecast(request: DriftRequest) -> DriftResponse:
-    env = default_environment()
     lat, lon = _centroid(request.spill_geometry)
     hours = max(1.0, request.forecast_hours)
 
     future = advect(
         Particle(lat, lon),
         hours,
-        env.current_u_mps,
-        env.current_v_mps,
-        env.wind_u_mps,
-        env.wind_v_mps,
+        request.current_u_mps,
+        request.current_v_mps,
+        request.wind_u_mps,
+        request.wind_v_mps,
     )
 
     return DriftResponse(

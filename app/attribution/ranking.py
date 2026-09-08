@@ -40,6 +40,8 @@ def rank_candidates(request: AttributionRequest) -> AttributionResponse:
             "evidence": evidence,
             "features": features,
             "positions_used": len(vessel_positions),
+            # This is source AIS data, preserved for the map—not an inferred route.
+            "trajectory": [position.model_dump() for position in vessel_positions],
         })
 
     candidates.sort(key=lambda x: x["score"], reverse=True)

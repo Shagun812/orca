@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#1c1b1d", "outline-variant": "#534434", "tertiary": "#8fd5ff", "primary-container": "#f59e0b", "secondary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#004966", "on-secondary": "#003640", "on-primary-fixed-variant": "#653e00", "surface-container-lowest": "#0e0e10", "on-error-container": "#ffdad6", "on-primary-container": "#613b00", "error": "#ffb4ab", "surface-dim": "#131315", "secondary-fixed": "#acedff", "on-secondary-container": "#00424e", "on-primary": "#472a00", "tertiary-fixed": "#c5e7ff", "on-error": "#690005", "on-surface-variant": "#d8c3ad", "inverse-surface": "#e5e1e4", "on-tertiary-fixed": "#001e2d", "primary": "#ffc174", "on-secondary-fixed": "#001f26", "on-secondary-fixed-variant": "#004e5c", "background": "#131315", "surface-tint": "#ffb95f", "surface-bright": "#39393b", "inverse-on-surface": "#313032", "surface-variant": "#353437", "on-primary-fixed": "#2a1700", "outline": "#a08e7a", "on-tertiary-fixed-variant": "#004c6a", "secondary-container": "#03b5d3", "on-surface": "#e5e1e4", "on-background": "#e5e1e4", "secondary": "#4cd7f6", "inverse-primary": "#855300", "tertiary-container": "#1abdff", "surface-container-high": "#2a2a2c", "surface": "#131315", "primary-fixed": "#ffddb8", "on-tertiary": "#00344a", "primary-fixed-dim": "#ffb95f", "tertiary-fixed-dim": "#7fd0ff", "surface-container": "#201f22", "surface-container-highest": "#353437", "error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "panel-gap": "0.75rem", "stack-compact": "0.25rem", "stack-relaxed": "1rem", "stack-default": "0.5rem", "inset-panel": "1.25rem", "hud-edge-desktop": "1.5rem", "hud-edge-mobile": "0.75rem", "inset-panel-compact": "0.75rem", "inset-pill": "0.375rem 0.75rem" }, "fontFamily": { "headline-xl": ["Inter"], "label-lg": ["JetBrains Mono"], "label-sm": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-14 w-full px-hud-edge-desktop flex items-center justify-between gap-panel-gap"><div class="flex items-center gap-stack-default"><img alt="OilWatch AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy85vceJ0pjo6FsM0EFqfEQ8X-rfMRGDNXx5aSDx_sFgBd157zckxwwIMkxu_nfl0dbFKzZ0hiBUcPiMjXXGU7xr4hLSJAKJK11sOwJ8jfaCWyQULDcHCQdRQDETKdWvj450J1o7nPwuxnHIitpwbogi4Psp-i9vYyUterlBD3dgGpByu_9yuTy898pE5xQkZ2HUGKnHPmON4S0lTEXc_U93iaQnNXRuPbK_r2B3IKf6kWA4mt4zFQ9MZS"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">OilWatch</span></div><nav class="hidden md:flex items-center gap-stack-relaxed" data-active-classes="text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium"><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="dashboard" href="#">Dashboard</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="investigations" href="#">Investigations</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="vessels" href="#">Vessels</a><a aria-current="page" class="relative flex flex-col items-center transition-colors py-1 text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium" data-path="reports" href="#">Reports</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="settings" href="#">Settings</a></nav><div class="flex items-center gap-panel-gap"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container/60 backdrop-blur-md"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">SAR Feed: <span class="text-on-surface font-medium">LIVE</span></span></div><div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container/40 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"><span class="material-symbols-outlined text-[14px]">search</span><span class="font-label-sm text-label-sm">⌘K</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer select-none ring-1 ring-primary/20"><span class="font-label-sm text-label-sm text-on-primary font-semibold">EJ</span></div></div></div></header><main class="w-full pt-14 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 py-10 lg:py-16 flex flex-col gap-12">
+<!-- Ambient Instrument Grid Watermark (Subtle avionics telemetry backdrop) -->
+<div class="pointer-events-none absolute inset-0 overflow-hidden opacity-25">
+<div class="absolute -right-24 top-0 w-96 h-96 rounded-full bg-surface-container-highest/20 blur-3xl"></div>
+<div class="absolute left-1/3 top-1/2 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+</div>
+<!-- Page Header & Top Minimal Action -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-4">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Forensic Registry</span>
+<span class="inline-block w-1 h-1 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">REV 4.9.2</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Reports &amp; Forensic Dossiers
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Court-ready satellite SAR analysis, hydro-drift models, and vessel attribution exports.
+        </p>
+</div>
+<!-- Actions Deck -->
+<div class="flex items-center gap-3 self-start md:self-end">
+<button class="h-9 px-4 rounded-full bg-surface-container/60 hover:bg-surface-container-high transition-all text-on-surface font-body-sm text-body-sm flex items-center gap-2" id="quickAuditBtn">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">tune</span>
+<span>Batch Audit</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-on-surface text-surface-container-lowest font-body-sm text-body-sm font-medium hover:bg-white transition-all flex items-center gap-2 shadow-xl shadow-surface-container-lowest/50" id="newDossierBtn">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>New Dossier</span>
+<span class="font-label-sm text-label-sm text-surface-container-lowest/60 px-1 py-0.2 rounded bg-surface-container-lowest/10">⌘N</span>
+</button>
+</div>
+</div>
+<!-- Forensic Metric Ribbon (Micro telemetry counters) -->
+<div class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-surface-container-lowest/70 backdrop-blur-xl">
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Admissible Dossiers</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">142</span>
+<span class="font-label-sm text-label-sm text-primary">+3 this cycle</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Attribution Score</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">94.8%</span>
+<span class="font-label-sm text-label-sm text-secondary">SAR Verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Jurisdictional Handoffs</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">38</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active courts</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">SAR Re-pass Lock</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">04m 12s</span>
+<span class="font-label-sm text-label-sm text-primary animate-pulse">Orbit 812B</span>
+</div>
+</div>
+</div>
+<!-- Filter Strip (Low-density glass pills) -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-low/60 backdrop-blur-md">
+<button class="filter-tab px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all text-on-surface bg-surface-container-high shadow-sm" data-filter="all">
+          All Reports
+        </button>
+<button class="filter-tab px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="emsa">
+          EMSA Standard
+        </button>
+<button class="filter-tab px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="marpol">
+          MARPOL Annex I
+        </button>
+<button class="filter-tab px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="imo">
+          IMO Evidentiary
+        </button>
+</div>
+<!-- Quick Search Micro Bar -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low/50 text-on-surface-variant focus-within:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<input class="bg-transparent text-body-sm font-body-sm placeholder-on-surface-variant/50 focus:outline-none w-44 sm:w-60 text-on-surface" id="dossierSearch" placeholder="Filter by vessel, IMO, sector..." type="text"/>
+</div>
+</div>
+<!-- Forensic Dossier List (Spacious pure whitespace separation) -->
+<div class="relative z-10 flex flex-col gap-6" id="dossierContainer">
+<!-- Dossier 1: Ready for Prosecution -->
+<article class="dossier-card group relative p-6 sm:p-8 rounded-xl bg-surface-container-low/40 hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm flex flex-col gap-6" data-category="marpol emsa imo">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-3xl">
+<!-- Badges Bar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">#REP-2025-049</span>
+<span class="inline-block w-1 h-1 rounded-full bg-surface-container-highest"></span>
+<!-- Amber Tag: Ready for Prosecution -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                Ready for Prosecution
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high/60 font-label-sm text-label-sm text-on-surface-variant">
+                MARPOL Annex I §15
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">
+                12m ago
+              </span>
+</div>
+<!-- Title & Primary Attribution -->
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm sm:text-headline-md text-on-surface font-medium tracking-tight flex items-center gap-2.5 flex-wrap">
+<span>Dossier #REP-2025-049 · Strait of Malacca Spill #4092</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 flex-wrap">
+<span class="text-on-surface font-medium">Attributed to MT Polaris Spirit</span>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm font-medium">96% confidence</span>
+<span>·</span>
+<span>28 Pages</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IMO: 9382914 · Flag: Panama (PA)</span>
+</p>
+</div>
+</div>
+<!-- Quick Action Group -->
+<div class="flex items-center gap-2 sm:self-end lg:self-start pt-2 lg:pt-0">
+<button class="preview-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" data-hash="sha256:4f8e...901c" data-pages="28" data-title="Dossier #REP-2025-049 · MT Polaris Spirit">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">visibility</span>
+<span>Preview</span>
+</button>
+<button class="download-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">download</span>
+<span>Download PDF</span>
+</button>
+<button class="share-btn h-8 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" title="Generate encrypted zero-trust share link">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">share</span>
+<span class="hidden sm:inline">Share Secure Link</span>
+</button>
+</div>
+</div>
+<!-- Evidence & Hydro-drift Micro Sub-panel -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+<!-- Synthetic-Aperture Radar & Drift Tile -->
+<div class="md:col-span-8 flex flex-col sm:flex-row gap-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md">
+<div class="w-full sm:w-44 h-28 rounded-md bg-surface-container-high relative overflow-hidden flex items-center justify-center shrink-0">
+<img class="w-full h-full object-cover" data-alt="Satellite Synthetic Aperture Radar greyscale forensic imagery of oil slick trailing dark vessel in Strait of Malacca with cyan coordinate overlays and telemetry crosshairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA81OZbFd-3zDvRvecdcN1QghYvDYJm4bu7Kc1TL-20hf6-KchEM57UXNl_2hv55_DF7PbaD0wEBGhiAWGCuuo39zN1qbub3v-S54Gue-QcQTVKEvY8LkzIqh3-4xELULTi9U6K7NhR9zsVmBriX4_zAhQAHulaJLi-fgsPR4xPoADly6EMkssUfJmFlW0VggVvitqxj5t5EbSTXlwTDh6l5imSnQ_VmKZEUcw5bsVgMBQqvYA-ymcS4w"/>
+<div class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-sm text-label-sm">SAR C-BAND</div>
+<div class="absolute bottom-2 right-2 text-on-surface font-label-sm text-label-sm bg-surface-container-lowest/80 px-1 rounded">1.4m/px</div>
+</div>
+<div class="flex flex-col justify-between py-0.5 gap-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hydrodynamic Slick Projection</span>
+<p class="font-body-sm text-body-sm text-on-surface">Estimated discharge: 1,420 Barrels crude. Trajectory drift 062° at 1.8 kts towards maritime conservation perimeter Alpha-6.</p>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>Lat: 03°12.44' N</span>
+<span>Lon: 101°18.09' E</span>
+<span class="text-primary font-medium">Chain of Custody Signed</span>
+</div>
+</div>
+</div>
+<!-- Forensic Vector Metadata Graph -->
+<div class="md:col-span-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md flex flex-col justify-between gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Confidence Matrix</span>
+<span class="font-label-sm text-label-sm text-secondary">AIS Spoof Rejected</span>
+</div>
+<!-- Mini SVG Sparkline Drift Curve -->
+<div class="w-full h-12 flex items-center">
+<svg class="w-full h-10 text-primary" fill="none" viewbox="0 0 200 40">
+<path d="M0 32 Q 40 30, 80 18 T 160 8 T 200 4" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M0 32 Q 40 30, 80 18 T 160 8 T 200 4 L 200 40 L 0 40 Z" fill="currentColor" fill-opacity="0.08"></path>
+<circle cx="160" cy="8" fill="currentColor" r="2.5"></circle>
+<circle cx="80" cy="18" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Sentinel-1A + Radarsat</span>
+<span class="text-on-surface font-mono">HASH: #8E09-PA</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 2: Archived Status -->
+<article class="dossier-card group relative p-6 sm:p-8 rounded-xl bg-surface-container-low/40 hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm flex flex-col gap-6" data-category="emsa">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-3xl">
+<!-- Badges Bar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">#REP-2025-044</span>
+<span class="inline-block w-1 h-1 rounded-full bg-surface-container-highest"></span>
+<!-- Archived Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant/50"></span>
+                Archived
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high/60 font-label-sm text-label-sm text-on-surface-variant">
+                EMSA SafeSeaNet
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">
+                2 days ago
+              </span>
+</div>
+<!-- Title & Primary Attribution -->
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm sm:text-headline-md text-on-surface font-medium tracking-tight flex items-center gap-2.5 flex-wrap">
+<span>Dossier #REP-2025-044 · North Sea Platform Sector 4B</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 flex-wrap">
+<span class="text-on-surface font-medium">Attributed to Bilge Discharge Event</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">Platform 4B Outflow</span>
+<span>·</span>
+<span>16 Pages</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">UK Continental Shelf · OSPAR Convention</span>
+</p>
+</div>
+</div>
+<!-- Quick Action Group -->
+<div class="flex items-center gap-2 sm:self-end lg:self-start pt-2 lg:pt-0">
+<button class="preview-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" data-hash="sha256:1a9c...774b" data-pages="16" data-title="Dossier #REP-2025-044 · North Sea Sector 4B">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">visibility</span>
+<span>Preview</span>
+</button>
+<button class="download-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">download</span>
+<span>Download PDF</span>
+</button>
+<button class="share-btn h-8 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" title="Generate encrypted zero-trust share link">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">share</span>
+<span class="hidden sm:inline">Share Secure Link</span>
+</button>
+</div>
+</div>
+<!-- Evidence & Hydro-drift Micro Sub-panel -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+<!-- Contextual Summary -->
+<div class="md:col-span-8 flex flex-col sm:flex-row gap-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md">
+<div class="w-full sm:w-44 h-28 rounded-md bg-surface-container-high relative overflow-hidden flex items-center justify-center shrink-0">
+<img class="w-full h-full object-cover" data-alt="Satellite Synthetic Aperture Radar thermal signature showing offshore oil drilling platform wake with thin sheen plume in cold North Sea waters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWdeoTluYbqLhI7GU67VkdkXTsuj6mpGX2mFsuDWfsIm2NPfMaByrPZD3cy1dVTP9OP21AA1E-vSoXvvUH1hRJNY7OChPkbnmvExUDa29KsYrZASbIhArfmPH3l15_3pHG8p8RDql7fKc4Ks-H1LUZPQnZ5ISNjJ-k1XjBPBdawX0LLP9Y2EoGFqqCTRJfxSEP9lU8JlSnzSh3PDfr-jD5TAaavXxsAXxHGP19GRuOmAOad7Dc9SPNg"/>
+<div class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-on-surface-variant font-label-sm text-label-sm">SAR L-BAND</div>
+<div class="absolute bottom-2 right-2 text-on-surface font-label-sm text-label-sm bg-surface-container-lowest/80 px-1 rounded">2.0m/px</div>
+</div>
+<div class="flex flex-col justify-between py-0.5 gap-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Settlement &amp; Remediation Status</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Case closed with Maritime &amp; Coastguard Agency (MCA). Voluntary mitigation bond posted by platform consortium operator.</p>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>Lat: 57°48.12' N</span>
+<span>Lon: 01°22.35' E</span>
+<span class="text-on-surface-variant font-medium">Vault ID: #ARC-99182</span>
+</div>
+</div>
+</div>
+<!-- Hydro-thermal telemetry card -->
+<div class="md:col-span-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md flex flex-col justify-between gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Spectral Analysis</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Water Sheen &lt; 0.1μm</span>
+</div>
+<div class="flex items-baseline justify-between py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dissipation Rate</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">98.2%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[98%]"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Sensor: Sentinel-1B</span>
+<span class="text-on-surface font-mono">STATUS: SEALED</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 3: Certified Status -->
+<article class="dossier-card group relative p-6 sm:p-8 rounded-xl bg-surface-container-low/40 hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm flex flex-col gap-6" data-category="imo marpol">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-3xl">
+<!-- Badges Bar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">#REP-2025-038</span>
+<span class="inline-block w-1 h-1 rounded-full bg-surface-container-highest"></span>
+<!-- Certified Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Certified
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high/60 font-label-sm text-label-sm text-on-surface-variant">
+                UNCLOS Part XII
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">
+                1 week ago
+              </span>
+</div>
+<!-- Title & Primary Attribution -->
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm sm:text-headline-md text-on-surface font-medium tracking-tight flex items-center gap-2.5 flex-wrap">
+<span>Dossier #REP-2025-038 · West African Gulf Incident</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 flex-wrap">
+<span class="text-on-surface font-medium">Multi-vessel corridor study</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">3 Tankers Intersected</span>
+<span>·</span>
+<span>42 Pages</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gulf of Guinea Exclusive Economic Zone</span>
+</p>
+</div>
+</div>
+<!-- Quick Action Group -->
+<div class="flex items-center gap-2 sm:self-end lg:self-start pt-2 lg:pt-0">
+<button class="preview-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" data-hash="sha256:7c2b...33ef" data-pages="42" data-title="Dossier #REP-2025-038 · West African Corridor">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">visibility</span>
+<span>Preview</span>
+</button>
+<button class="download-btn h-8 px-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">download</span>
+<span>Download PDF</span>
+</button>
+<button class="share-btn h-8 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5" title="Generate encrypted zero-trust share link">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">share</span>
+<span class="hidden sm:inline">Share Secure Link</span>
+</button>
+</div>
+</div>
+<!-- Evidence & Hydro-drift Micro Sub-panel -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+<!-- Synthetic-Aperture Radar & Corridor Tile -->
+<div class="md:col-span-8 flex flex-col sm:flex-row gap-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md">
+<div class="w-full sm:w-44 h-28 rounded-md bg-surface-container-high relative overflow-hidden flex items-center justify-center shrink-0">
+<img class="w-full h-full object-cover" data-alt="Satellite SAR high contrast imagery of three merchant oil tankers navigating dark oceanic transit corridor off coast of West Africa with vector track lines and transponder gaps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJuKfIOaTSj-JsiRtmpbcXjjZf9wEHaoJVqylHT7easwuCEUHOkFHqYHzhfTP9lbj2jDaJ_ntLn1VfKht2XR66-RakAGhgm_GwOVISCFheSLKMVx9jwWZbX3LrygGblnAsBmdutAcRh_EkBhJaHJHp24kdafr8_1wAt3uex7H2fjR5Tr2ws_N6S4MZ_l_1tVDaUJBWwuCBRrlx_typ6h_g09X_AfRvuXGJ2VFQ1rSEe2iHAt80_qSyqA"/>
+<div class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-sm text-label-sm">SAR COSMO-SkyMed</div>
+<div class="absolute bottom-2 right-2 text-on-surface font-label-sm text-label-sm bg-surface-container-lowest/80 px-1 rounded">1.0m/px</div>
+</div>
+<div class="flex flex-col justify-between py-0.5 gap-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Multi-AIS Discrepancy Matrix</span>
+<p class="font-body-sm text-body-sm text-on-surface">Coordinated STS (Ship-to-Ship) transfer anomaly detected at 04:18 UTC with AIS spoofing flag verified by SAR constellation triangulation.</p>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>Lat: 04°19.22' N</span>
+<span>Lon: 06°45.81' E</span>
+<span class="text-secondary font-medium">International Maritime Tribunal Admissible</span>
+</div>
+</div>
+</div>
+<!-- Corridor Density Metric -->
+<div class="md:col-span-4 p-4 rounded-lg bg-surface-container-lowest/60 backdrop-blur-md flex flex-col justify-between gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Interpol Evidence Hash</span>
+<span class="font-label-sm text-label-sm text-on-surface font-mono">OK-88402</span>
+</div>
+<div class="flex flex-col gap-1 py-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Evidentiary Completeness</span>
+<span class="text-on-surface font-medium">100% (Signed)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>SAR Constellation: 4 Satellites</span>
+<span class="text-on-surface font-mono">SEAL: INTERPOL-EEZ</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State for Filters (Hidden by default) -->
+<div class="hidden flex flex-col items-center justify-center py-24 text-center" id="noResultsState">
+<span class="material-symbols-outlined text-[36px] text-on-surface-variant mb-2">find_in_page</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">No forensic dossiers match criteria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Try adjusting your evidentiary standard or search keywords.</p>
+<button class="mt-4 px-4 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" id="resetFilterBtn">
+        Reset Search Filters
+      </button>
+</div>
+<!-- Bottom Instrumental Status Footer -->
+<footer class="pt-8 pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Forensic Timestamp Integrity: SHA-256 Validated
+        </span>
+<span class="hidden md:inline">·</span>
+<span class="hidden md:inline">SAR Constellation Synced (Sentinel, RADARSAT, COSMO)</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="hover:text-on-surface transition-colors" href="#">Forensic Verification API</a>
+<span>·</span>
+<a class="hover:text-on-surface transition-colors" href="#">Judicial Export Guide</a>
+</div>
+</footer>
+</div>
+<!-- Interactive Modal: Preview Dossier Drawer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-2xl transition-opacity duration-200 opacity-0 pointer-events-none" id="previewModal">
+<div class="relative w-full max-w-2xl bg-surface-container-low rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col gap-6 transform transition-all duration-200 scale-95" id="previewModalContent">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">SAR Evidentiary Summary</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="modalTitle">Dossier Overview</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="modalSubtitle">Cryptographically signed legal dossier</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest/80 flex flex-col gap-3 font-label-md text-label-md">
+<div class="flex justify-between py-1 border-b border-surface-container-highest/20">
+<span class="text-on-surface-variant">Cryptographic Hash:</span>
+<span class="text-on-surface font-mono" id="modalHash">sha256:4f8e...901c</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-highest/20">
+<span class="text-on-surface-variant">Total Documentation:</span>
+<span class="text-on-surface" id="modalPages">28 Pages (PDF/A-1b Archival)</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-highest/20">
+<span class="text-on-surface-variant">Attribution Status:</span>
+<span class="text-secondary font-medium">Verified by Hydro-Drift Engine</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">Legal Standing:</span>
+<span class="text-primary font-medium">Ready for International Admiralty Filing</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" id="cancelModalBtn">
+          Dismiss
+        </button>
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg" id="confirmDownloadBtn">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download Certified Package</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal: New Dossier Generator Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/85 backdrop-blur-2xl transition-opacity duration-200 opacity-0 pointer-events-none" id="newDossierModal">
+<div class="relative w-full max-w-xl bg-surface-container-low rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col gap-6 transform transition-all duration-200 scale-95" id="newDossierModalContent">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Forensic Compilation Wizard</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Generate Forensic Dossier</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Package AIS telemetry, hydro-drift analysis, and SAR imagery into court-ready files.</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" id="closeNewModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-4" id="dossierForm">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Target Vessel or Incident ID</label>
+<input class="w-full px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-on-surface-variant/40 focus:outline-none focus:ring-1 focus:ring-primary/40" placeholder="e.g., MT Polaris Spirit or #INC-2025-901" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Evidentiary Standard</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary/40">
+<option>EMSA SafeSeaNet</option>
+<option>MARPOL Annex I §15</option>
+<option>IMO Evidentiary Resolution</option>
+<option>UNCLOS Part XII Marine Env</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">SAR Orbit Constellation</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary/40">
+<option>Sentinel-1 C-Band (Primary)</option>
+<option>Radarsat-2 High-Res</option>
+<option>COSMO-SkyMed Multi-Pass</option>
+<option>All Constellations (Exhaustive)</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest accent-primary-container" id="includeDrift" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface" for="includeDrift">Include 72-hour backward/forward hydro-drift simulation</label>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-surface-container-highest/20">
+<button class="px-4 py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" id="cancelNewModalBtn" type="button">
+            Cancel
+          </button>
+<button class="px-5 py-2 rounded-full bg-on-surface text-surface-container-lowest font-body-sm text-body-sm font-semibold hover:bg-white transition-colors flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Initiate Synthesis</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Micro Toast Notification for Share / Copy -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-surface-container-high text-on-surface shadow-2xl font-body-sm text-body-sm" id="toastNotification">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span id="toastMessage">Secure link copied to clipboard</span>
+</div>
+</div>
+<script>
+  (function() {
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const dossierCards = document.querySelectorAll('.dossier-card');
+    const searchInput = document.getElementById('dossierSearch');
+    const noResults = document.getElementById('noResultsState');
+    const resetBtn = document.getElementById('resetFilterBtn');
+
+    let currentFilter = 'all';
+
+    function applyFilters() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      dossierCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const categories = card.getAttribute('data-category') || '';
+        
+        const matchesCategory = currentFilter === 'all' || categories.includes(currentFilter);
+        const matchesSearch = query === '' || text.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-surface-container-high', 'text-on-surface', 'shadow-sm');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-surface-container-high', 'text-on-surface', 'shadow-sm');
+        tab.classList.remove('text-on-surface-variant');
+
+        currentFilter = tab.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      currentFilter = 'all';
+      filterTabs.forEach((t, i) => {
+        if (i === 0) {
+          t.classList.add('bg-surface-container-high', 'text-on-surface', 'shadow-sm');
+          t.classList.remove('text-on-surface-variant');
+        } else {
+          t.classList.remove('bg-surface-container-high', 'text-on-surface', 'shadow-sm');
+          t.classList.add('text-on-surface-variant');
+        }
+      });
+      applyFilters();
+    });
+
+    // Toast System
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    let toastTimeout;
+
+    function showToast(text) {
+      clearTimeout(toastTimeout);
+      toastMsg.textContent = text;
+      toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3000);
+    }
+
+    // Share action
+    document.querySelectorAll('.share-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Admiralty-grade secure zero-knowledge link generated and copied.');
+      });
+    });
+
+    // Download action
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Initiating encrypted forensic PDF download...');
+      });
+    });
+
+    // Preview Modal
+    const previewModal = document.getElementById('previewModal');
+    const previewModalContent = document.getElementById('previewModalContent');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPages = document.getElementById('modalPages');
+    const modalHash = document.getElementById('modalHash');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const cancelModalBtn = document.getElementById('cancelModalBtn');
+    const confirmDownloadBtn = document.getElementById('confirmDownloadBtn');
+
+    function openPreview(title, pages, hash) {
+      modalTitle.textContent = title;
+      modalPages.textContent = pages + ' Pages (Evidentiary PDF/A-1b)';
+      modalHash.textContent = hash;
+      
+      previewModal.classList.remove('opacity-0', 'pointer-events-none');
+      previewModal.classList.add('opacity-100');
+      previewModalContent.classList.remove('scale-95');
+      previewModalContent.classList.add('scale-100');
+    }
+
+    function closePreview() {
+      previewModal.classList.add('opacity-0', 'pointer-events-none');
+      previewModal.classList.remove('opacity-100');
+      previewModalContent.classList.add('scale-95');
+      previewModalContent.classList.remove('scale-100');
+    }
+
+    document.querySelectorAll('.preview-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const title = btn.getAttribute('data-title');
+        const pages = btn.getAttribute('data-pages');
+        const hash = btn.getAttribute('data-hash');
+        openPreview(title, pages, hash);
+      });
+    });
+
+    closeModalBtn.addEventListener('click', closePreview);
+    cancelModalBtn.addEventListener('click', closePreview);
+    confirmDownloadBtn.addEventListener('click', () => {
+      closePreview();
+      showToast('Downloading certified cryptographic evidence bundle...');
+    });
+
+    previewModal.addEventListener('click', (e) => {
+      if (e.target === previewModal) closePreview();
+    });
+
+    // New Dossier Modal & Cmd+N Shortcut
+    const newDossierModal = document.getElementById('newDossierModal');
+    const newDossierModalContent = document.getElementById('newDossierModalContent');
+    const newDossierBtn = document.getElementById('newDossierBtn');
+    const closeNewModalBtn = document.getElementById('closeNewModalBtn');
+    const cancelNewModalBtn = document.getElementById('cancelNewModalBtn');
+    const dossierForm = document.getElementById('dossierForm');
+
+    function openNewModal() {
+      newDossierModal.classList.remove('opacity-0', 'pointer-events-none');
+      newDossierModal.classList.add('opacity-100');
+      newDossierModalContent.classList.remove('scale-95');
+      newDossierModalContent.classList.add('scale-100');
+    }
+
+    function closeNewModal() {
+      newDossierModal.classList.add('opacity-0', 'pointer-events-none');
+      newDossierModal.classList.remove('opacity-100');
+      newDossierModalContent.classList.add('scale-95');
+      newDossierModalContent.classList.remove('scale-100');
+    }
+
+    newDossierBtn.addEventListener('click', openNewModal);
+    closeNewModalBtn.addEventListener('click', closeNewModal);
+    cancelNewModalBtn.addEventListener('click', closeNewModal);
+
+    newDossierModal.addEventListener('click', (e) => {
+      if (e.target === newDossierModal) closeNewModal();
+    });
+
+    dossierForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      closeNewModal();
+      showToast('Compiling new SAR drift model. Expected completion: 45 seconds.');
+    });
+
+    // Keyboard shortcuts (Cmd+N, Escape)
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'n') {
+        e.preventDefault();
+        openNewModal();
+      }
+      if (e.key === 'Escape') {
+        closePreview();
+        closeNewModal();
+      }
+    });
+
+    // Batch Audit Button Action
+    document.getElementById('quickAuditBtn').addEventListener('click', () => {
+      showToast('Batch forensic audit running: 3 dossiers validated against IMO Registry.');
+    });
+  })();
+</script></main></body></html>

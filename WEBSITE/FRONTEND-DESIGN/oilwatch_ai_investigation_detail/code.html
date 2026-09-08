@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#1c1b1d", "outline-variant": "#534434", "tertiary": "#8fd5ff", "primary-container": "#f59e0b", "secondary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#004966", "on-secondary": "#003640", "on-primary-fixed-variant": "#653e00", "surface-container-lowest": "#0e0e10", "on-error-container": "#ffdad6", "on-primary-container": "#613b00", "error": "#ffb4ab", "surface-dim": "#131315", "secondary-fixed": "#acedff", "on-secondary-container": "#00424e", "on-primary": "#472a00", "tertiary-fixed": "#c5e7ff", "on-error": "#690005", "on-surface-variant": "#d8c3ad", "inverse-surface": "#e5e1e4", "on-tertiary-fixed": "#001e2d", "primary": "#ffc174", "on-secondary-fixed": "#001f26", "on-secondary-fixed-variant": "#004e5c", "background": "#131315", "surface-tint": "#ffb95f", "surface-bright": "#39393b", "inverse-on-surface": "#313032", "surface-variant": "#353437", "on-primary-fixed": "#2a1700", "outline": "#a08e7a", "on-tertiary-fixed-variant": "#004c6a", "secondary-container": "#03b5d3", "on-surface": "#e5e1e4", "on-background": "#e5e1e4", "secondary": "#4cd7f6", "inverse-primary": "#855300", "tertiary-container": "#1abdff", "surface-container-high": "#2a2a2c", "surface": "#131315", "primary-fixed": "#ffddb8", "on-tertiary": "#00344a", "primary-fixed-dim": "#ffb95f", "tertiary-fixed-dim": "#7fd0ff", "surface-container": "#201f22", "surface-container-highest": "#353437", "error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "panel-gap": "0.75rem", "stack-compact": "0.25rem", "stack-relaxed": "1rem", "stack-default": "0.5rem", "inset-panel": "1.25rem", "hud-edge-desktop": "1.5rem", "hud-edge-mobile": "0.75rem", "inset-panel-compact": "0.75rem", "inset-pill": "0.375rem 0.75rem" }, "fontFamily": { "headline-xl": ["Inter"], "label-lg": ["JetBrains Mono"], "label-sm": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-14 w-full px-hud-edge-desktop flex items-center justify-between gap-panel-gap"><div class="flex items-center gap-stack-default"><img alt="OilWatch AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy85vceJ0pjo6FsM0EFqfEQ8X-rfMRGDNXx5aSDx_sFgBd157zckxwwIMkxu_nfl0dbFKzZ0hiBUcPiMjXXGU7xr4hLSJAKJK11sOwJ8jfaCWyQULDcHCQdRQDETKdWvj450J1o7nPwuxnHIitpwbogi4Psp-i9vYyUterlBD3dgGpByu_9yuTy898pE5xQkZ2HUGKnHPmON4S0lTEXc_U93iaQnNXRuPbK_r2B3IKf6kWA4mt4zFQ9MZS"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">OilWatch</span></div><nav class="hidden md:flex items-center gap-stack-relaxed" data-active-classes="text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium"><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="dashboard" href="#">Dashboard</a><a aria-current="page" class="relative flex flex-col items-center transition-colors py-1 text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium" data-path="investigations" href="#">Investigations</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="vessels" href="#">Vessels</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="reports" href="#">Reports</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="settings" href="#">Settings</a></nav><div class="flex items-center gap-panel-gap"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container/60 backdrop-blur-md"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">SAR Feed: <span class="text-on-surface font-medium">LIVE</span></span></div><div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container/40 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"><span class="material-symbols-outlined text-[14px]">search</span><span class="font-label-sm text-label-sm">⌘K</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer select-none ring-1 ring-primary/20"><span class="font-label-sm text-label-sm text-on-primary font-semibold">EJ</span></div></div></div></header><main class="w-full pt-14 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full h-[calc(100vh-3.5rem)] overflow-hidden bg-surface-container-lowest select-none">
+<!-- Full-Bleed Ocean SAR Map Substrate -->
+<div class="absolute inset-0 w-full h-full" data-location="Strait of Malacca" style="">
+<!-- Dark Ocean Vector Canvas Overlay simulating High-Resolution Synthetic-Aperture Radar -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Radar Scanning Gradient -->
+<radialgradient cx="44%" cy="48%" id="slickGlow" r="40%">
+<stop offset="0%" stop-color="#03b5d3" stop-opacity="0.28"></stop>
+<stop offset="35%" stop-color="#00424e" stop-opacity="0.18"></stop>
+<stop offset="70%" stop-color="#f59e0b" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#0e0e10" stop-opacity="0"></stop>
+</radialgradient>
+<!-- Slick Core Texture -->
+<lineargradient id="slickCore" x1="20%" x2="80%" y1="30%" y2="70%">
+<stop offset="0%" stop-color="#f59e0b" stop-opacity="0.45"></stop>
+<stop offset="40%" stop-color="#03b5d3" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#1c1b1d" stop-opacity="0.8"></stop>
+</lineargradient>
+<!-- Trajectory Dash Array Pattern -->
+<filter id="hudBlur">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Bathymetry & Nautical Grid Lines -->
+<g opacity="0.15">
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="0" x2="100%" y1="20%" y2="20%"></line>
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="0" x2="100%" y1="50%" y2="50%"></line>
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="0" x2="100%" y1="80%" y2="80%"></line>
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="25%" x2="25%" y1="0" y2="100%"></line>
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="55%" x2="55%" y1="0" y2="100%"></line>
+<line stroke="#d8c3ad" stroke-dasharray="4 12" stroke-width="0.5" x1="85%" x2="85%" y1="0" y2="100%"></line>
+</g>
+<!-- SAR Backscatter Anomaly Zone (Oil Slick Multi-Polygon) -->
+<g class="transition-opacity duration-700" id="slickLayer">
+<!-- Diffuse Radar Attenuation Halo -->
+<path d="M 420 320 Q 560 260, 680 340 T 940 370 Q 1060 410, 990 490 T 780 540 Q 590 560, 480 480 Z" fill="url(#slickGlow)" filter="url(#hudBlur)"></path>
+<!-- Primary Dense Hydrocarbon Film Area (18.4 km²) -->
+<path class="transition-all duration-500" d="M 470 340 C 580 290, 720 330, 830 360 C 950 390, 930 460, 860 490 C 780 520, 680 500, 560 490 C 490 480, 430 430, 440 380 Z" fill="url(#slickCore)"></path>
+<path d="M 520 370 C 600 340, 710 360, 800 390 C 870 410, 850 460, 770 470 C 690 480, 590 460, 530 440 Z" fill="#0e0e10" fill-opacity="0.65"></path>
+<!-- Calculated Ocean Surface Drift Vectors (Current: 1.4 kts @ 114°) -->
+<g opacity="0.6">
+<!-- Drift vector 1 -->
+<path d="M 520 410 L 610 445" stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1"></path>
+<polygon fill="#4cd7f6" points="610,445 600,440 603,448"></polygon>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#4cd7f6" x="618" y="450">1.4kt 114°</text>
+<!-- Drift vector 2 -->
+<path d="M 740 430 L 830 465" stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1"></path>
+<polygon fill="#4cd7f6" points="830,465 820,460 823,468"></polygon>
+<!-- Drift vector 3 -->
+<path d="M 640 350 L 730 385" stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1"></path>
+<polygon fill="#4cd7f6" points="730,385 720,380 723,388"></polygon>
+</g>
+<!-- Slick Origin Geolocation Crosshair -->
+<g transform="translate(560, 420)">
+<circle class="animate-spin" cx="0" cy="0" fill="none" r="16" stroke="#f59e0b" stroke-dasharray="2 4" stroke-width="0.75" style="animation-duration: 18s;"></circle>
+<circle cx="0" cy="0" fill="#f59e0b" r="2"></circle>
+<text class="font-label-sm text-label-sm text-[10px]" fill="#ffc174" x="12" y="-8">ORIGIN: 03:58 UTC</text>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#a08e7a" x="12" y="4">01°41'22"N 102°18'04"E</text>
+</g>
+</g>
+<!-- Vessel AIS Hairline Trajectories -->
+<!-- Candidate #3: Star Clipper (Container) passing south -->
+<g opacity="0.35">
+<path d="M 210 590 L 1180 510" stroke="#a08e7a" stroke-dasharray="4 6" stroke-width="0.75"></path>
+<circle cx="980" cy="525" fill="#353437" r="3"></circle>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#a08e7a" x="990" y="530">STAR CLIPPER (14%)</text>
+</g>
+<!-- Candidate #2: Ocean Voyager (Bulk) passing upwind 12nm -->
+<g opacity="0.45">
+<path d="M 310 240 L 1050 210" stroke="#a08e7a" stroke-dasharray="4 6" stroke-width="0.75"></path>
+<circle cx="720" cy="223" fill="#353437" r="3"></circle>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#a08e7a" x="730" y="220">OCEAN VOYAGER (+12nm Upwind)</text>
+</g>
+<!-- Candidate #1 (Suspect): MT POLARIS SPIRIT Trajectory -->
+<g id="suspectTrajectory">
+<!-- Transponder Signal Route Prior to Gap -->
+<path d="M 260 480 L 450 440" opacity="0.5" stroke="#f59e0b" stroke-dasharray="2 2" stroke-width="1.2"></path>
+<!-- AIS Gap Span (Direct intersection through slick origin zone) -->
+<path d="M 450 440 L 730 380" opacity="0.9" stroke="#f59e0b" stroke-dasharray="6 4" stroke-width="1.8"></path>
+<!-- Post-Gap Trajectory Reacquired -->
+<path d="M 730 380 L 980 320" opacity="0.6" stroke="#4cd7f6" stroke-dasharray="2 3" stroke-width="1"></path>
+<!-- Gap Delimiter Markers -->
+<g transform="translate(450, 440)">
+<line stroke="#ffb4ab" stroke-width="1.5" x1="-4" x2="4" y1="-4" y2="4"></line>
+<line stroke="#ffb4ab" stroke-width="1.5" x1="4" x2="-4" y1="-4" y2="4"></line>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#ffb4ab" x="-60" y="16">AIS LOST 03:45</text>
+</g>
+<g transform="translate(730, 380)">
+<line stroke="#acedff" stroke-width="1.5" x1="-4" x2="4" y1="-4" y2="4"></line>
+<line stroke="#acedff" stroke-width="1.5" x1="4" x2="-4" y1="-4" y2="4"></line>
+<text class="font-label-sm text-label-sm text-[9px]" fill="#acedff" x="8" y="-10">AIS RESUMED 04:30</text>
+</g>
+<!-- Current Suspect Vessel Marker with Amber Indicator Pulse -->
+<g class="cursor-pointer" id="suspectVesselPin" transform="translate(860, 350)">
+<circle class="animate-ping" cx="0" cy="0" fill="#f59e0b" fill-opacity="0.12" r="18" style="animation-duration: 3s;"></circle>
+<circle cx="0" cy="0" fill="#f59e0b" fill-opacity="0.25" r="10"></circle>
+<circle cx="0" cy="0" fill="#f59e0b" r="4.5"></circle>
+<!-- Tactical Callout Line -->
+<polyline fill="none" opacity="0.8" points="0,0 24,-24 110,-24" stroke="#f59e0b" stroke-width="1"></polyline>
+<text class="font-label-lg text-label-lg font-semibold tracking-wider" fill="#ffc174" x="30" y="-30">MT POLARIS SPIRIT</text>
+<text class="font-label-sm text-label-sm" fill="#d8c3ad" x="30" y="-12">11.4 kn · COG 298°</text>
+</g>
+</g>
+</svg>
+<!-- Coordinate Reticle / Scale Indicators in Map corners -->
+<div class="absolute top-4 right-6 pointer-events-none flex flex-col items-end gap-0.5 font-label-sm text-label-sm text-outline">
+<span>SAR FOOTPRINT: SENTINEL-1B IW</span>
+<span>RES: 10m/px · POL: VV+VH</span>
+</div>
+</div>
+<!-- FLOATING ELEMENT 1 (Top Left): Incident Status Chip -->
+<aside aria-label="Incident status" class="absolute top-4 left-4 md:top-6 md:left-6 z-20 pointer-events-auto">
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl px-4 py-3 rounded-lg shadow-[0_16px_32px_-8px_rgba(0,0,0,0.8)] flex flex-col gap-2 max-w-sm">
+<!-- Status Header Row -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Incident #4092</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-primary">Strait of Malacca</span>
+</div>
+<!-- Metric Readouts -->
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">satellite_alt</span>
+<span>Sentinel-1 SAR @ 04:12 UTC</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-primary-container">water_loss</span>
+<span class="text-on-surface font-medium">~18.4 km²</span>
+</div>
+</div>
+<!-- Telemetry Summary Pill -->
+<div class="flex items-center justify-between rounded bg-surface-container-low/70 px-2.5 py-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">CONFIDENCE RATING</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold tracking-wider">CRITICAL CORRELATION</span>
+</div>
+</div>
+</aside>
+<!-- FLOATING ELEMENT 2 (Bottom Center / Right): Collapsible Candidate Ranking Glass Panel -->
+<section aria-label="Candidate vessels" class="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 pointer-events-auto w-[calc(100vw-2rem)] sm:w-[420px] transition-all duration-300" id="candidatePanel">
+<div class="bg-surface-container-lowest/85 backdrop-blur-2xl rounded-xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col">
+<!-- Panel Header / Collapsible Trigger -->
+<div class="flex items-center justify-between px-4 py-3 cursor-pointer bg-surface-container/50 hover:bg-surface-container/80 transition-colors" id="panelCollapseToggle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container">analytics</span>
+<h2 class="font-headline-sm text-headline-sm text-body-md text-on-surface font-medium">Candidate Vessels</h2>
+<span class="font-label-sm text-label-sm text-outline">(Top 3 by AI Match)</span>
+</div>
+<button aria-label="Toggle candidate vessels panel" class="text-on-surface-variant hover:text-on-surface p-1 rounded-md transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300" id="collapseChevron">expand_more</span>
+</button>
+</div>
+<!-- Panel Body (Collapsible Section) -->
+<div class="flex flex-col transition-all duration-300 max-h-[500px] opacity-100" id="candidateListContainer">
+<div class="p-3 flex flex-col gap-2.5">
+<!-- Match #1: High Suspicion / Priority Match -->
+<div class="rounded-lg bg-surface-container-low p-3 transition-colors cursor-pointer relative overflow-hidden group hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">MT Polaris Spirit</span>
+<span class="font-label-sm text-label-sm text-outline">IMO 9384102</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Crude Oil Tanker · Flag: Panama</span>
+</div>
+<!-- Match Score Badge -->
+<div class="flex flex-col items-end">
+<span class="px-2 py-0.5 rounded-full bg-primary-container/15 font-label-md text-label-md text-primary-container font-semibold">96% Correlation</span>
+<span class="font-label-sm text-label-sm text-error mt-0.5 flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-error"></span>AIS Gap Intersect
+                  </span>
+</div>
+</div>
+<!-- Forensic Finding Micro-Callout -->
+<div class="mt-2.5 rounded bg-surface-container-lowest/80 p-2 font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+<span class="text-primary-container font-medium">AIS gap detected 03:45–04:30 UTC</span> directly intersects slick origin vector. Estimated discharge payload: 220–310 bbls.
+              </div>
+</div>
+<!-- Match #2: Ocean Voyager -->
+<div class="rounded-lg bg-surface-container-low/60 p-2.5 transition-colors cursor-pointer hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Ocean Voyager</span>
+<span class="font-label-sm text-label-sm text-outline">IMO 9120443</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bulk Carrier · Passed 12nm upwind</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">28% Match</span>
+</div>
+<!-- Match #3: Star Clipper -->
+<div class="rounded-lg bg-surface-container-low/60 p-2.5 transition-colors cursor-pointer hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Star Clipper</span>
+<span class="font-label-sm text-label-sm text-outline">IMO 9840221</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Container Ship · Course clean</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">14% Match</span>
+</div>
+</div>
+<!-- Single Tactical Primary Action Button -->
+<div class="p-3 pt-1 bg-surface-container/20">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-medium transition-all group shadow-md" id="actionBtn">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#f59e0b]"></span>
+<span>Inspect MT Polaris Dossier</span>
+<span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FLOATING ELEMENT 3 (Bottom Left): Temporal Drift Timeline Scrubber -->
+<div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20 pointer-events-auto">
+<div class="bg-surface-container-lowest/85 backdrop-blur-2xl px-3.5 py-2.5 rounded-xl shadow-[0_16px_32px_-8px_rgba(0,0,0,0.8)] flex items-center gap-4">
+<!-- Play / Pause Interaction -->
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-bright flex items-center justify-center text-on-surface transition-colors" id="scrubberPlayBtn">
+<span class="material-symbols-outlined text-[18px]" id="playIcon">play_arrow</span>
+</button>
+<!-- Scrubber Track and Indicators -->
+<div class="flex flex-col gap-1 w-48 sm:w-64">
+<div class="flex justify-between items-center font-label-sm text-label-sm text-outline">
+<span>-4h</span>
+<span class="text-primary-container font-medium" id="scrubberTimeDisplay">Detection: 04:12 UTC</span>
+<span>+2h Sim</span>
+</div>
+<!-- Interactive Range Slider -->
+<div class="relative w-full flex items-center">
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="timeRange" max="100" min="0" type="range" value="66"/>
+</div>
+</div>
+<!-- Anomaly Snapshot Indicator -->
+<div class="hidden sm:flex flex-col items-end pl-2">
+<span class="font-label-sm text-label-sm text-outline uppercase">Drift Status</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Backward Track</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initInvestigationView() {
+    // Collapsible Ranking Panel Toggle
+    const toggleBtn = document.getElementById('panelCollapseToggle');
+    const container = document.getElementById('candidateListContainer');
+    const chevron = document.getElementById('collapseChevron');
+    let isCollapsed = false;
+
+    if (toggleBtn && container && chevron) {
+      toggleBtn.addEventListener('click', () => {
+        isCollapsed = !isCollapsed;
+        if (isCollapsed) {
+          container.style.maxHeight = '0px';
+          container.style.opacity = '0';
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          container.style.maxHeight = '500px';
+          container.style.opacity = '1';
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Timeline Scrubber & Animation Simulation
+    const timeRange = document.getElementById('timeRange');
+    const scrubberTimeDisplay = document.getElementById('scrubberTimeDisplay');
+    const slickLayer = document.getElementById('slickLayer');
+    const playBtn = document.getElementById('scrubberPlayBtn');
+    const playIcon = document.getElementById('playIcon');
+    let isPlaying = false;
+    let timer = null;
+
+    function updateTimeline(val) {
+      // Scale from 0 (00:12 UTC) to 100 (06:12 UTC)
+      const hours = Math.floor((val / 100) * 6);
+      const mins = Math.floor(((val / 100) * 360) % 60);
+      const displayHours = String(hours).padStart(2, '0');
+      const displayMins = String(mins).padStart(2, '0');
+      
+      if (val >= 60 && val <= 72) {
+        scrubberTimeDisplay.textContent = 'SAR: 04:12 UTC (T0)';
+        scrubberTimeDisplay.classList.add('text-primary-container');
+        scrubberTimeDisplay.classList.remove('text-on-surface');
+      } else {
+        scrubberTimeDisplay.textContent = `${displayHours}:${displayMins} UTC`;
+        scrubberTimeDisplay.classList.remove('text-primary-container');
+        scrubberTimeDisplay.classList.add('text-on-surface');
+      }
+
+      // Map slick dissipation/growth based on scrubber
+      if (slickLayer) {
+        const opacityRatio = Math.max(0.2, val / 100);
+        slickLayer.style.opacity = opacityRatio;
+      }
+    }
+
+    if (timeRange) {
+      timeRange.addEventListener('input', (e) => {
+        updateTimeline(e.target.value);
+      });
+    }
+
+    if (playBtn && playIcon && timeRange) {
+      playBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playIcon.textContent = 'pause';
+          timer = setInterval(() => {
+            let current = parseInt(timeRange.value, 10);
+            if (current >= 100) current = 0;
+            else current += 1;
+            timeRange.value = current;
+            updateTimeline(current);
+          }, 60);
+        } else {
+          playIcon.textContent = 'play_arrow';
+          clearInterval(timer);
+        }
+      });
+    }
+
+    // Pin Click Micro-interaction
+    const vesselPin = document.getElementById('suspectVesselPin');
+    const actionBtn = document.getElementById('actionBtn');
+    if (vesselPin && actionBtn) {
+      vesselPin.addEventListener('click', () => {
+        actionBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+        setTimeout(() => {
+          actionBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        }, 600);
+      });
+    }
+  })();
+</script></main></body></html>

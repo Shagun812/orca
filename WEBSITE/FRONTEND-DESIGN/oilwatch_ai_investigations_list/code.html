@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#1c1b1d", "outline-variant": "#534434", "tertiary": "#8fd5ff", "primary-container": "#f59e0b", "secondary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#004966", "on-secondary": "#003640", "on-primary-fixed-variant": "#653e00", "surface-container-lowest": "#0e0e10", "on-error-container": "#ffdad6", "on-primary-container": "#613b00", "error": "#ffb4ab", "surface-dim": "#131315", "secondary-fixed": "#acedff", "on-secondary-container": "#00424e", "on-primary": "#472a00", "tertiary-fixed": "#c5e7ff", "on-error": "#690005", "on-surface-variant": "#d8c3ad", "inverse-surface": "#e5e1e4", "on-tertiary-fixed": "#001e2d", "primary": "#ffc174", "on-secondary-fixed": "#001f26", "on-secondary-fixed-variant": "#004e5c", "background": "#131315", "surface-tint": "#ffb95f", "surface-bright": "#39393b", "inverse-on-surface": "#313032", "surface-variant": "#353437", "on-primary-fixed": "#2a1700", "outline": "#a08e7a", "on-tertiary-fixed-variant": "#004c6a", "secondary-container": "#03b5d3", "on-surface": "#e5e1e4", "on-background": "#e5e1e4", "secondary": "#4cd7f6", "inverse-primary": "#855300", "tertiary-container": "#1abdff", "surface-container-high": "#2a2a2c", "surface": "#131315", "primary-fixed": "#ffddb8", "on-tertiary": "#00344a", "primary-fixed-dim": "#ffb95f", "tertiary-fixed-dim": "#7fd0ff", "surface-container": "#201f22", "surface-container-highest": "#353437", "error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "panel-gap": "0.75rem", "stack-compact": "0.25rem", "stack-relaxed": "1rem", "stack-default": "0.5rem", "inset-panel": "1.25rem", "hud-edge-desktop": "1.5rem", "hud-edge-mobile": "0.75rem", "inset-panel-compact": "0.75rem", "inset-pill": "0.375rem 0.75rem" }, "fontFamily": { "headline-xl": ["Inter"], "label-lg": ["JetBrains Mono"], "label-sm": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-14 w-full px-hud-edge-desktop flex items-center justify-between gap-panel-gap"><div class="flex items-center gap-stack-default"><img alt="OilWatch AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy85vceJ0pjo6FsM0EFqfEQ8X-rfMRGDNXx5aSDx_sFgBd157zckxwwIMkxu_nfl0dbFKzZ0hiBUcPiMjXXGU7xr4hLSJAKJK11sOwJ8jfaCWyQULDcHCQdRQDETKdWvj450J1o7nPwuxnHIitpwbogi4Psp-i9vYyUterlBD3dgGpByu_9yuTy898pE5xQkZ2HUGKnHPmON4S0lTEXc_U93iaQnNXRuPbK_r2B3IKf6kWA4mt4zFQ9MZS"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface">OilWatch</span></div><nav class="hidden md:flex items-center gap-stack-relaxed" data-active-classes="text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium"><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="dashboard" href="#">Dashboard</a><a aria-current="page" class="relative flex flex-col items-center transition-colors py-1 text-on-surface after:w-1 after:h-1 after:rounded-full after:bg-primary-container after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 font-medium" data-path="investigations" href="#">Investigations</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="vessels" href="#">Vessels</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="reports" href="#">Reports</a><a class="relative flex flex-col items-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="settings" href="#">Settings</a></nav><div class="flex items-center gap-panel-gap"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container/60 backdrop-blur-md"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">SAR Feed: <span class="text-on-surface font-medium">LIVE</span></span></div><div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container/40 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"><span class="material-symbols-outlined text-[14px]">search</span><span class="font-label-sm text-label-sm">⌘K</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer select-none ring-1 ring-primary/20"><span class="font-label-sm text-label-sm text-on-primary font-semibold">EJ</span></div></div></div></header><main class="w-full pt-14 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-6xl mx-auto px-6 lg:px-12 py-10 lg:py-16">
+<!-- Header Section with Instrument Telemetry Texture -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Synthetic Aperture Radar · Pipeline 04</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-medium tracking-tight">Investigations</h1>
+<p class="font-body-md text-body-md text-outline">7 recorded incidents this month across primary transshipment corridors.</p>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="flex items-center gap-8 py-2 px-5 rounded-full bg-surface-container/40 backdrop-blur-md self-start md:self-auto">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">MEAN CONFIDENCE</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">93.4%</span>
+</div>
+<span class="text-outline-variant font-label-sm">/</span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">DARK STS CORRELATIONS</span>
+<span class="font-label-md text-label-md text-primary font-medium">03</span>
+</div>
+<span class="text-outline-variant font-label-sm">/</span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">ORBIT CYCLE</span>
+<span class="font-label-md text-label-md text-secondary font-medium">04:12m</span>
+</div>
+</div>
+</div>
+<!-- Filter Bar: Tabular Pure Text Controls -->
+<div class="flex items-center justify-between border-none pb-6">
+<nav class="flex items-center gap-8" id="investigation-tabs">
+<button class="tab-btn group relative flex items-center gap-2 pb-2 text-left font-body-md text-body-md transition-colors text-on-surface cursor-pointer" data-filter="active">
+<span>Active</span>
+<span class="font-label-sm text-label-sm text-outline group-hover:text-on-surface transition-colors">03</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container rounded-full transition-all"></span>
+</button>
+<button class="tab-btn group relative flex items-center gap-2 pb-2 text-left font-body-md text-body-md transition-colors text-outline hover:text-on-surface cursor-pointer" data-filter="review">
+<span>Under Review</span>
+<span class="font-label-sm text-label-sm text-outline group-hover:text-on-surface transition-colors">02</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all"></span>
+</button>
+<button class="tab-btn group relative flex items-center gap-2 pb-2 text-left font-body-md text-body-md transition-colors text-outline hover:text-on-surface cursor-pointer" data-filter="archived">
+<span>Archived</span>
+<span class="font-label-sm text-label-sm text-outline group-hover:text-on-surface transition-colors">18</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all"></span>
+</button>
+</nav>
+<!-- View Meta Controls -->
+<div class="hidden sm:flex items-center gap-4 text-outline">
+<button class="flex items-center gap-1.5 font-label-sm text-label-sm hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>FILTERS</span>
+</button>
+<span class="text-outline-variant">·</span>
+<button class="flex items-center gap-1.5 font-label-sm text-label-sm hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>EXPORT CSV</span>
+</button>
+</div>
+</div>
+<!-- Table-less Incident Stream -->
+<div class="flex flex-col space-y-3 mt-4" id="incident-list">
+<!-- Incident 1: Malacca (High Urgency) -->
+<div class="group relative rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-low/90 cursor-pointer" data-category="active">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Left: Coordinates, ID, Sensor Source -->
+<div class="flex items-start gap-4 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px] text-primary">radar</span>
+</div>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-3">
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface">Strait of Malacca</span>
+<span class="font-label-md text-label-md text-outline">#4092</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-primary animate-ping"></span>
+                  HIGH
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-outline">
+<span>Detected 42m ago</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm">Sentinel-1A (SAR-C)</span>
+<span>·</span>
+<span class="text-on-surface-variant font-medium">1 Prime Suspect</span>
+<span class="hidden sm:inline">·</span>
+<span class="hidden sm:inline font-label-sm text-label-sm text-outline">01°22'N 103°48'E</span>
+</div>
+</div>
+</div>
+<!-- Right: Visual Vector preview & Telemetry Pill -->
+<div class="flex items-center justify-between lg:justify-end gap-8 shrink-0">
+<!-- Inline Mini SAR Metric Visualizer -->
+<div class="hidden sm:flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline">RADAR SLICK</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">4.8 km²</span>
+</div>
+<!-- Inline micro SVG sparkline showing anomaly peak -->
+<svg class="w-16 h-7 text-primary" fill="none" viewbox="0 0 64 24">
+<path d="M0 18 L12 16 L24 19 L36 8 L48 4 L64 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<circle cx="48" cy="4" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<!-- Confidence Metric -->
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline uppercase">Confidence</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">98%</span>
+</div>
+<!-- Action Status Pill & Linear Arrow -->
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-medium tracking-wide">
+                ACTIVE
+              </span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-outline group-hover:text-on-surface group-hover:translate-x-1 transition-all">
+<span class="hidden md:inline">Open dossier</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident 2: North Sea -->
+<div class="group relative rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-low/90 cursor-pointer" data-category="active">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex items-start gap-4 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px] text-secondary">explore</span>
+</div>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-3">
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface">North Sea Sector 4B</span>
+<span class="font-label-md text-label-md text-outline">#4088</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary-fixed-dim font-medium">
+                  MODERATE
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-outline">
+<span>Detected 3h ago</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm">Cosmo-SkyMed-2</span>
+<span>·</span>
+<span class="text-on-surface-variant font-medium">3 Candidate Vessels</span>
+<span class="hidden sm:inline">·</span>
+<span class="hidden sm:inline font-label-sm text-label-sm text-outline">56°14'N 03°22'E</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between lg:justify-end gap-8 shrink-0">
+<div class="hidden sm:flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline">RADAR SLICK</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">1.9 km²</span>
+</div>
+<svg class="w-16 h-7 text-secondary" fill="none" viewbox="0 0 64 24">
+<path d="M0 14 L16 14 L30 9 L44 11 L64 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<circle cx="64" cy="5" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline uppercase">Confidence</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">92%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary-fixed-dim font-medium tracking-wide">
+                TRACKING
+              </span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-outline group-hover:text-on-surface group-hover:translate-x-1 transition-all">
+<span class="hidden md:inline">Open dossier</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident 3: Gulf of Guinea -->
+<div class="group relative rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-low/90 cursor-pointer" data-category="review">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex items-start gap-4 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px] text-tertiary">satellite_alt</span>
+</div>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-3">
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface">Gulf of Guinea</span>
+<span class="font-label-md text-label-md text-outline">#4079</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-outline font-medium">
+                  ESTIMATING
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-outline">
+<span>Detected 14h ago</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm">Radarsat-2</span>
+<span>·</span>
+<span class="text-on-surface-variant font-medium">Drift calculated</span>
+<span class="hidden sm:inline">·</span>
+<span class="hidden sm:inline font-label-sm text-label-sm text-outline">03°40'N 06°11'E</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between lg:justify-end gap-8 shrink-0">
+<div class="hidden sm:flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline">DRIFT DISPERSION</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">0.8 kn / 185°</span>
+</div>
+<svg class="w-16 h-7 text-outline" fill="none" viewbox="0 0 64 24">
+<path d="M0 12 L20 12 L35 15 L50 17 L64 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<circle cx="64" cy="20" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline uppercase">Confidence</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">87%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-outline font-medium tracking-wide">
+                REVIEW
+              </span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-outline group-hover:text-on-surface group-hover:translate-x-1 transition-all">
+<span class="hidden md:inline">Open dossier</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident 4: Baltic Sea Entrance -->
+<div class="group relative rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-low/90 cursor-pointer opacity-70 hover:opacity-100" data-category="archived">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex items-start gap-4 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px] text-outline">check_circle</span>
+</div>
+<div class="space-y-1.5 min-w-0">
+<div class="flex flex-wrap items-center gap-3">
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface">Baltic Sea Entrance</span>
+<span class="font-label-md text-label-md text-outline">#4065</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-outline font-medium">
+                  VERIFIED
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-outline">
+<span>Detected Yesterday</span>
+<span>·</span>
+<span class="font-label-sm text-label-sm">Sentinel-1B</span>
+<span>·</span>
+<span class="text-on-surface-variant font-medium">Case resolved</span>
+<span class="hidden sm:inline">·</span>
+<span class="hidden sm:inline font-label-sm text-label-sm text-outline">55°38'N 12°47'E</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between lg:justify-end gap-8 shrink-0">
+<div class="hidden sm:flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline">STATUS</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">REPORTED TO HELCOM</span>
+</div>
+<svg class="w-16 h-7 text-outline" fill="none" viewbox="0 0 64 24">
+<path d="M0 12 L64 12" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline uppercase">Confidence</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">96%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-outline font-medium tracking-wide">
+                CLOSED
+              </span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-outline group-hover:text-on-surface group-hover:translate-x-1 transition-all">
+<span class="hidden md:inline">Open dossier</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Minimal SAR Constellation Satellite Footprint Drawer / Inset Status -->
+<div class="mt-20 pt-10 border-none flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-outline">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-1.5 overflow-hidden">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-label-sm text-label-sm text-on-surface font-medium ring-2 ring-surface-container-lowest">S1</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-label-sm text-label-sm text-on-surface font-medium ring-2 ring-surface-container-lowest">CS</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-label-sm text-label-sm text-on-surface font-medium ring-2 ring-surface-container-lowest">R2</div>
+</div>
+<span class="font-body-sm text-body-sm">Next orbital pass over Malacca Corridor in <span class="text-on-surface font-medium">38 mins</span> via Sentinel-1C</span>
+</div>
+<div class="flex items-center gap-6 font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+          HIGH CORRELATION (&gt;95%)
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          AIS MULTI-TRACK (&gt;90%)
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Tab switching interaction
+  const tabs = document.querySelectorAll('#investigation-tabs .tab-btn');
+  const rows = document.querySelectorAll('#incident-list > div');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Clear active styling
+      tabs.forEach(t => {
+        t.classList.remove('text-on-surface');
+        t.classList.add('text-outline');
+        const bar = t.querySelector('span:last-child');
+        bar.classList.remove('bg-primary-container');
+        bar.classList.add('bg-transparent');
+      });
+
+      // Set active styling
+      tab.classList.add('text-on-surface');
+      tab.classList.remove('text-outline');
+      const activeBar = tab.querySelector('span:last-child');
+      activeBar.classList.add('bg-primary-container');
+      activeBar.classList.remove('bg-transparent');
+
+      const filter = tab.getAttribute('data-filter');
+      
+      rows.forEach(row => {
+        const category = row.getAttribute('data-category');
+        if (filter === 'active') {
+          row.style.display = (category === 'active') ? 'block' : 'none';
+        } else if (filter === 'review') {
+          row.style.display = (category === 'review') ? 'block' : 'none';
+        } else if (filter === 'archived') {
+          row.style.display = (category === 'archived') ? 'block' : 'none';
+        }
+      });
+    });
+  });
+
+  // Default to showing all initially for rich desktop overview
+  rows.forEach(row => row.style.display = 'block');
+</script></main></body></html>
