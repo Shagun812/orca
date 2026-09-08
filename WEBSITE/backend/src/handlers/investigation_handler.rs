@@ -9,7 +9,13 @@ pub async fn list(
     State(pool): State<PgPool>,
 ) -> Result<Json<Vec<Investigation>>, StatusCode> {
     let rows = sqlx::query_as::<_, Investigation>(
-        "SELECT id, user_id, title, description, status, NULL AS spill_info, created_at, updated_at FROM investigations ORDER BY created_at DESC"
+        r#"SELECT i.id, i.user_id, i.title, i.description, i.status, i.created_at, i.updated_at,
+            (SELECT row_to_json(s) FROM (
+                SELECT sp.prediction_id, sp.confidence, sp.area_km2
+                FROM spills sp WHERE sp.investigation_id = i.id
+                ORDER BY sp.created_at DESC LIMIT 1
+            ) s) AS spill_info
+        FROM investigations i ORDER BY i.created_at DESC"#
     )
     .fetch_all(&pool)
     .await
@@ -44,7 +50,17 @@ pub async fn get(
         r#"SELECT i.id, i.user_id, i.title, i.description, i.status, i.created_at, i.updated_at,
             (SELECT row_to_json(s) FROM (
                 SELECT sp.prediction_id, sp.confidence, sp.area_km2, ST_AsGeoJSON(sp.geometry)::json AS geometry,
-                       obs.observed_at, '/uploads/' || regexp_replace(obs.image_path, '^.*[\\\\/]', '') AS image_url
+                       ST_AsGeoJSON(obs.bbox)::json AS observation_bbox, obs.observed_at,
+                       COALESCE((SELECT json_agg(cv ORDER BY cv.rank) FROM (
+                           SELECT c.mmsi, c.rank, c.score, c.positions_used, c.evidence, c.features, v.vessel_name, v.vessel_type
+                           FROM candidate_vessels c LEFT JOIN vessels v ON v.mmsi = c.mmsi
+                           WHERE c.spill_id = sp.id
+                       ) cv), '[]'::json) AS vessel_rankings,
+                       (SELECT row_to_json(oz) FROM (
+                           SELECT ST_AsGeoJSON(oz.center)::json AS center, oz.radius_km, ST_AsGeoJSON(oz.polygon)::json AS polygon, oz.uncertainty_km, oz.window_start, oz.window_end
+                           FROM origin_zones oz WHERE oz.spill_id = sp.id ORDER BY oz.id DESC LIMIT 1
+                       ) oz) AS drift_origin,
+                       '/uploads/' || regexp_replace(obs.image_path, '^.*[\\/]', '') AS image_url
                 FROM spills sp
                 JOIN satellite_observations obs ON obs.id = sp.satellite_observation_id
                 WHERE sp.investigation_id = i.id

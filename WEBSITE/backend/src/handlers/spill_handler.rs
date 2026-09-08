@@ -244,6 +244,34 @@ pub async fn attribution_rank(
         set_job_running(&pool_clone, job_id).await;
         let outcome = MlClient::from_env().attribution_rank(&body).await
             .and_then(|response| serde_json::to_value(response).map_err(|error| error.to_string()));
+        if let Ok(result) = &outcome {
+            if let Some(candidates) = result.get("candidates").and_then(|value| value.as_array()) {
+                let spill_id = sqlx::query_scalar::<_, Uuid>("SELECT sp.id FROM spills sp JOIN satellite_observations obs ON obs.id = sp.satellite_observation_id WHERE obs.observed_at = $1 ORDER BY sp.created_at DESC LIMIT 1")
+                    .bind(body.event_time)
+                    .fetch_optional(&pool_clone).await.ok().flatten();
+                if let Some(spill_id) = spill_id {
+                    let _ = sqlx::query("DELETE FROM candidate_vessels WHERE spill_id = $1").bind(spill_id).execute(&pool_clone).await;
+                    for candidate in candidates {
+                        let mmsi = candidate.get("vessel_id").and_then(|value| value.as_str()).unwrap_or("");
+                        if mmsi.is_empty() { continue; }
+                        let last = candidate.get("trajectory").and_then(|value| value.as_array()).and_then(|rows| rows.last());
+                        let name = last.and_then(|row| row.get("vessel_name")).and_then(|value| value.as_str());
+                        let vessel_type = last.and_then(|row| row.get("vessel_type")).and_then(|value| value.as_str());
+                        let imo = last.and_then(|row| row.get("imo")).and_then(|value| value.as_str());
+                        let _ = sqlx::query("INSERT INTO vessels (mmsi, imo, vessel_name, vessel_type) VALUES ($1,$2,$3,$4) ON CONFLICT (mmsi) DO UPDATE SET imo=EXCLUDED.imo, vessel_name=EXCLUDED.vessel_name, vessel_type=EXCLUDED.vessel_type, updated_at=NOW()")
+                            .bind(mmsi).bind(imo).bind(name).bind(vessel_type).execute(&pool_clone).await;
+                        let _ = sqlx::query("INSERT INTO candidate_vessels (spill_id, mmsi, rank, score, evidence, features, positions_used) VALUES ($1,$2,$3,$4,$5,$6,$7)")
+                            .bind(spill_id).bind(mmsi)
+                            .bind(candidate.get("rank").and_then(|value| value.as_i64()).unwrap_or(0) as i32)
+                            .bind(candidate.get("score").and_then(|value| value.as_f64()).unwrap_or(0.0))
+                            .bind(candidate.get("evidence").cloned().unwrap_or_default())
+                            .bind(candidate.get("features").cloned().unwrap_or_default())
+                            .bind(candidate.get("positions_used").and_then(|value| value.as_i64()).unwrap_or(0) as i32)
+                            .execute(&pool_clone).await;
+                    }
+                }
+            }
+        }
         finish_job(&pool_clone, job_id, outcome).await;
     });
     Ok(Json(serde_json::json!({ "job_id": job_id })))

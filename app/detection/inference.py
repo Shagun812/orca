@@ -32,7 +32,7 @@ def detect_spill(request: DetectionRequest) -> DetectionResponse:
         raise HTTPException(status_code=422, detail=f"Uploaded image cannot be read: {image_path}")
 
     try:
-        result = _model().predict(source=str(image_path), verbose=False)[0]
+        result = _model().predict(source=str(image_path), verbose=False, conf=0.10)[0]
     except Exception as exc:
         raise HTTPException(status_code=502, detail=f"Spill model inference failed: {exc}") from exc
 
