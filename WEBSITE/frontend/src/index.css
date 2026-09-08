@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 /* =========================================================
-   NOCTURNE MARITIME — OilWatch AI Design System
+   NOCTURNE MARITIME — ORCA Design System
    Sourced directly from FRONTEND-DESIGN/nocturne_maritime/DESIGN.md
    ========================================================= */
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     /* Surface hierarchy */
     --color-surface: #131315;
@@ -446,7 +449,91 @@ body {
 .spill-key { background: #f6b84b; }.impact-key { background: #ef4444; }.origin-key { background: repeating-linear-gradient(90deg,#68cad1 0 3px,transparent 3px 5px); }.drift-key { background: repeating-linear-gradient(90deg,#f6b84b 0 3px,transparent 3px 5px); }.route-key { background: #72d0d5; }
 .ais-popup .maplibregl-popup-content { padding: 10px 12px; border-radius: 8px; background: #11181a; color: #e6f7f7; border: 1px solid rgba(114,208,213,.55); box-shadow: 0 12px 28px rgba(0,0,0,.45); font: 11px/1.55 var(--font-mono); }
 .ais-popup strong { display: block; color: #72d0d5; margin-bottom: 3px; }.ais-popup p { margin: 0; color: #b6c4c6; }
-@media (max-width: 640px) { .case-panel { top: auto; height: min(62vh, 520px); bottom: 12px; left: 12px; width: calc(100vw - 24px); } .case-header { left: 12px; top: 12px; } .map-legend { display: none; } }
+
+/* =========================================================
+   CUSTOM ANIMATIONS
+   ========================================================= */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; pointer-events: none; visibility: hidden; }
+}
+
+@keyframes loaderPulse {
+  0% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+  70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 30px rgba(245, 158, 11, 0); }
+  100% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out both;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.8s ease-in-out forwards;
+}
+
+.animate-loader-pulse {
+  animation: loaderPulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.animate-slide-up-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}@media (max-width: 640px) { .case-panel { top: auto; height: min(62vh, 520px); bottom: 12px; left: 12px; width: calc(100vw - 24px); } .case-header { left: 12px; top: 12px; } .map-legend { display: none; } }
 
 @media print {
   body { background: #fff !important; color: #111 !important; }

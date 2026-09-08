@@ -17,12 +17,13 @@ export default function AppShell() {
           position="right"
           items={menuItems}
           displaySocials={false}
-          displayItemNumbering={true}
+          displayItemNumbering={false}
           menuButtonColor="#ffffff"
           openMenuButtonColor="#fff"
           changeMenuColorOnOpen={true}
           colors={['#201f22', '#131315']}
           accentColor="#f59e0b"
+          isFixed={true}
         />
       </div>
 

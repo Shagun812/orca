@@ -1,8 +1,85 @@
+# ORCA Global Git Ignore
 
+# --------------------------
+# Python & ML Service
+# --------------------------
 .venv/
+venv/
+env/
 __pycache__/
 .pytest_cache/
 *.pyc
-.env
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
 .ipynb_checkpoints/
 scratch_*.py
+.coverage
+htmlcov/
+
+# --------------------------
+# Rust Backend
+# --------------------------
+/WEBSITE/backend/target/
+**/*.rs.bk
+Cargo.lock
+
+# --------------------------
+# Node.js Frontend
+# --------------------------
+node_modules/
+/WEBSITE/frontend/dist/
+/WEBSITE/frontend/build/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --------------------------
+# Environment & Secrets
+# --------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+google-services.json
+GoogleService-Info.plist
+
+# --------------------------
+# Data & Uploads
+# --------------------------
+/data/
+/WEBSITE/backend/uploads/
+postgres-data/
+redis-data/
+*.sqlite
+*.sqlite3
+*.db
+
+# --------------------------
+# IDE & OS Files
+# --------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini

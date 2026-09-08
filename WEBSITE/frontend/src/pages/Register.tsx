@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 export default function Register() {
   const navigate = useNavigate()
@@ -55,15 +56,7 @@ export default function Register() {
 
       <div className="relative w-full max-w-md">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-10">
-          <div className="w-10 h-10 rounded-lg bg-[var(--color-signal-amber)] bg-opacity-20 flex items-center justify-center">
-            <span className="text-[var(--color-signal-amber)] text-lg font-bold">OW</span>
-          </div>
-          <div>
-            <h1 className="text-[var(--color-text-white)] font-semibold text-lg tracking-tight">OilWatch AI</h1>
-            <p className="text-label-sm text-[var(--color-muted)]">MARITIME INTELLIGENCE</p>
-          </div>
-        </div>
+        <Logo />
 
         {/* Register card */}
         <div className="glass-level-2 rounded-2xl p-8">
@@ -89,7 +82,7 @@ export default function Register() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="analyst@oilwatch.ai"
+                  placeholder="analyst@orca.ai"
                   className="input-field"
                   required
                 />

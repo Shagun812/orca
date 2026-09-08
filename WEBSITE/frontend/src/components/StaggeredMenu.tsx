@@ -3,15 +3,16 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './StaggeredMenu.css';
+import Logo from './Logo';
 
 export const StaggeredMenu = ({
   position = 'right',
   colors = ['#B497CF', '#5227FF'],
-  items = [],
-  socialItems = [],
+  items = [] as any[],
+  socialItems = [] as any[],
   displaySocials = true,
   displayItemNumbering = true,
-  className,
+  className = '',
   logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
   menuButtonColor = '#fff',
   openMenuButtonColor = '#fff',
@@ -19,8 +20,8 @@ export const StaggeredMenu = ({
   changeMenuColorOnOpen = true,
   isFixed = false,
   closeOnClickAway = true,
-  onMenuOpen,
-  onMenuClose
+  onMenuOpen = () => {},
+  onMenuClose = () => {}
 }) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -372,12 +373,7 @@ export const StaggeredMenu = ({
       </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
         <div className="sm-logo" aria-label="Logo">
-          <div className="w-8 h-8 rounded-lg bg-[var(--color-signal-amber)]/20 flex items-center justify-center">
-             <span className="text-[var(--color-signal-amber)] text-sm font-bold">OW</span>
-          </div>
-          <div className="ml-3">
-             <h1 className="text-[var(--color-text-white)] text-headline-sm font-semibold text-sm tracking-tight">OilWatch AI</h1>
-          </div>
+          <Logo />
         </div>
         <button
           ref={toggleBtnRef}
