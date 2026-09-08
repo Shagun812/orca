@@ -1,10 +1,10 @@
-# 🐋 ORCA - Maritime Intelligence Platform Complete Setup Guide
+#  ORCA - Maritime Intelligence Platform Complete Setup Guide
 
 Welcome to **ORCA**! This guide is written specifically for beginners. Follow these step-by-step instructions carefully, and you will have the entire platform running on your computer in just a few minutes. 
 
 ---
 
-## 🛑 Step 1: Install Required Software (Prerequisites)
+##  Step 1: Install Required Software (Prerequisites)
 Before running the code, you need to install a few foundational tools. If you already have these, you can skip to Step 2.
 
 1. **Docker Desktop** (Runs our databases)
@@ -25,7 +25,7 @@ Before running the code, you need to install a few foundational tools. If you al
 
 ---
 
-## 🧠 Step 2: Start the AI/ML Service
+##  Step 2: Start the AI/ML Service
 ORCA uses a Python AI service to analyze satellite images. We need to set this up first using `uv`.
 
 1. Open your terminal and navigate to this **main `orca` folder**:
@@ -58,7 +58,7 @@ ORCA uses a Python AI service to analyze satellite images. We need to set this u
 
 ---
 
-## 🛠️ Step 3: Start the Databases
+##  Step 3: Start the Databases
 ORCA uses a database to store cases and a memory cache to process data fast. We use Docker to spin these up instantly without any complex setup.
 
 1. Open a **new** terminal window.
@@ -74,7 +74,7 @@ ORCA uses a database to store cases and a memory cache to process data fast. We 
 
 ---
 
-## ⚙️ Step 4: Start the Backend Server
+##  Step 4: Start the Backend Server
 The backend is the "brain" of the platform, written in Rust. It talks to the database and processes our data.
 
 1. Keep your terminal open and navigate into the `backend` folder:
@@ -90,7 +90,7 @@ The backend is the "brain" of the platform, written in Rust. It talks to the dat
 
 ---
 
-## 🎨 Step 5: Start the Frontend Interface
+##  Step 5: Start the Frontend Interface
 The frontend is the beautiful user interface you see in your browser.
 
 1. Open a **brand new** Terminal window.
@@ -111,7 +111,7 @@ The frontend is the beautiful user interface you see in your browser.
 
 ---
 
-## 🚀 Step 6: Launch the App!
+##  Step 6: Launch the App!
 You're done! 
 
 1. Open your favorite web browser (Chrome, Safari, Edge, etc.).
@@ -123,6 +123,6 @@ You're done!
 
 ---
 
-### 💡 Troubleshooting
+###  Troubleshooting
 * **"Command not found"**: If your terminal says it doesn't recognize `cargo`, `npm`, `uv`, or `docker`, make sure you installed the software in Step 1 and **restarted your computer** so the terminal recognizes them.
 * **Database errors**: Make sure Docker Desktop application is currently open and running on your computer before typing `docker-compose up -d`.
