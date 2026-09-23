@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import SplitText from '../components/SplitText';
@@ -132,6 +132,7 @@ Trace the vessel"
           </div>
         </section>
 
+
         {/* ──── Dynamic Features Section ──── */}
         <section id="features" className="py-32 px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -184,6 +185,7 @@ Trace the vessel"
             </div>
           </div>
         </section>
+
 
 
 
@@ -285,6 +287,7 @@ Trace the vessel"
           </div>
         </section>
 
+
         {/* ──── Architecture Section ──── */}
         <section id="architecture" className="py-32 px-6 relative z-30 border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto">
@@ -374,7 +377,15 @@ Trace the vessel"
           </div>
         </section>
 
+
         {/* ──── Footer ──── */}
+        {/* Disclaimer */}
+        <div className="max-w-4xl mx-auto mb-20 rounded-2xl bg-red-950/40 border border-red-500/20 py-5 px-8 text-center z-50 relative backdrop-blur-xl shadow-[0_0_40px_rgba(239,68,68,0.05)] transition-all hover:bg-red-900/40 hover:border-red-500/40">
+          <p className="text-red-200/90 font-medium tracking-wider text-sm flex items-center justify-center gap-3 uppercase">
+            <span className="text-lg">⚠️</span> Disclaimer: The AI Model is currently not available for public access at the moment
+          </p>
+        </div>
+
         <footer className="bg-white/[0.02] backdrop-blur-xl pt-24 pb-12 px-6 relative z-10 border-t border-white/[0.06]">
           <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
             <div className="w-full flex flex-col items-center justify-center gap-6 text-sm text-[var(--color-muted)]">
@@ -395,3 +406,11 @@ Trace the vessel"
     </ReactLenis>
   );
 }
+
+
+
+
+
+
+
+
