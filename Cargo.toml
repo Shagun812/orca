@@ -23,6 +23,3 @@ sha2 = "0.10"
 hex = "0.4"
 sysinfo = "0.30"
 sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono", "json"] }
-shuttle-axum = "0.47.0"
-shuttle-runtime = "0.47.0"
-shuttle-shared-db = { version = "0.47.0", features = ["postgres", "sqlx"] }
