@@ -1,4 +1,4 @@
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+﻿import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import Map, { Layer, Popup, Source } from 'react-map-gl/maplibre'
 import 'maplibre-gl/dist/maplibre-gl.css'
@@ -21,6 +21,7 @@ export default function InvestigationDetail() {
   const [attributionResult, setAttributionResult] = useState<any>(null)
   const [hoveredPoint, setHoveredPoint] = useState<any>(null)
   const [caseStatus, setCaseStatus] = useState<string | null>(null)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const autoDriftStarted = useRef(false)
   const autoRankStarted = useRef(false)
   const token = localStorage.getItem('token')
@@ -110,7 +111,7 @@ export default function InvestigationDetail() {
     if (!inv?.spill_info?.geometry) return
     setFormError('')
     const lookback = Number(lookbackHours); const buffer = Number(originBufferKm)
-    if (!Number.isFinite(lookback) || lookback <= 0 || lookback > 168 || !Number.isFinite(buffer) || buffer <= 0 || buffer > 200) return setFormError('Lookback must be 1–168 hours and origin buffer must be 1–200 km.')
+    if (!Number.isFinite(lookback) || lookback <= 0 || lookback > 168 || !Number.isFinite(buffer) || buffer <= 0 || buffer > 200) return setFormError('Lookback must be 1â€“168 hours and origin buffer must be 1â€“200 km.')
     const response = await fetch('/api/v1/drift/hindcast', { method: 'POST', headers: { 'Content-Type': 'application/json', ...headers }, body: JSON.stringify({ spill_geometry: inv.spill_info.geometry, observed_at: inv.spill_info.observed_at, lookback_hours: lookback, origin_buffer_km: buffer, current_u_mps: intake.current_u_mps, current_v_mps: intake.current_v_mps, wind_u_mps: intake.wind_u_mps, wind_v_mps: intake.wind_v_mps }) })
     if (!response.ok) return setFormError('The drift service could not start. Check that both backend and ML service are running.')
     setJobId((await response.json()).job_id)
@@ -151,9 +152,9 @@ export default function InvestigationDetail() {
     }
   }, [job?.id, job?.type, job?.status, inv?.spill_info?.geometry, drift, aisRecords.length])
 
-  if (isLoading) return <div className="p-8 text-[var(--color-muted)]">Loading case…</div>
+  if (isLoading) return <div className="p-8 text-[var(--color-muted)]">Loading caseâ€¦</div>
   const center = inv?.spill_info?.geometry?.coordinates?.[0]?.[0] || [80.61, 15.79]
-  const status = job?.type ? `${job.type} · ${job.status}` : inv?.status || 'open'
+  const status = job?.type ? `${job.type} Â· ${job.status}` : inv?.status || 'open'
 
   return <div className="relative h-full min-h-[680px] bg-transparent">
     <Map initialViewState={{ longitude: center[0], latitude: center[1], zoom: 8.5 }} mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json" attributionControl={false} interactiveLayerIds={['uploaded-waypoints-dot', 'uploaded-vessels-dot', 'waypoints-dot', 'vessels-dot', 'spill-impact-area', 'spill-impact-dot']} onMouseMove={(event: any) => { const feature = event.features?.[0]; if (feature) setHoveredPoint({ longitude: event.lngLat.lng, latitude: event.lngLat.lat, ...feature.properties }); else setHoveredPoint(null) }} onMouseLeave={() => setHoveredPoint(null)}>
@@ -170,13 +171,27 @@ export default function InvestigationDetail() {
       {vesselRoutes.features.length > 0 && <Source id="routes" type="geojson" data={vesselRoutes as any}><Layer id="routes-line" type="line" paint={{ 'line-color': '#72d0d5', 'line-width': 2.5, 'line-opacity': 0.9 }} /></Source>}
       {vesselWaypoints.features.length > 0 && <Source id="waypoints" type="geojson" data={vesselWaypoints as any}><Layer id="waypoints-dot" type="circle" paint={{ 'circle-radius': 3.5, 'circle-color': '#0b1012', 'circle-stroke-color': '#72d0d5', 'circle-stroke-width': 1.5 }} /></Source>}
       {vesselPoints.features.length > 0 && <Source id="vessels" type="geojson" data={vesselPoints as any}><Layer id="vessels-dot" type="circle" paint={{ 'circle-radius': 5, 'circle-color': '#fff', 'circle-stroke-color': '#0f777e', 'circle-stroke-width': 3 }} /></Source>}
-      {hoveredPoint && <Popup longitude={hoveredPoint.longitude} latitude={hoveredPoint.latitude} closeButton={false} closeOnClick={false} offset={12} className="ais-popup"><div>{hoveredPoint.area_km2 ? <><strong>Apparent oil-spill region</strong><p>{Number(hoveredPoint.area_km2).toFixed(2)} km² · radius {Number(hoveredPoint.radius_km).toFixed(2)} km</p>{spillCoordinates && <p>{spillCoordinates.latitude.toFixed(5)}, {spillCoordinates.longitude.toFixed(5)}</p>}</> : <><strong>{hoveredPoint.name || hoveredPoint.mmsi || 'AIS waypoint'}</strong><p>MMSI {hoveredPoint.mmsi || '—'}</p>{hoveredPoint.timestamp && <p>{new Date(hoveredPoint.timestamp).toLocaleString()}</p>}{hoveredPoint.speed_knots !== undefined && <p>{hoveredPoint.speed_knots} kn · {hoveredPoint.course_deg}° · {hoveredPoint.vessel_type || 'Unknown'}</p>}</>}</div></Popup>}
+      {hoveredPoint && <Popup longitude={hoveredPoint.longitude} latitude={hoveredPoint.latitude} closeButton={false} closeOnClick={false} offset={12} className="ais-popup"><div>{hoveredPoint.area_km2 ? <><strong>Apparent oil-spill region</strong><p>{Number(hoveredPoint.area_km2).toFixed(2)} kmÂ² Â· radius {Number(hoveredPoint.radius_km).toFixed(2)} km</p>{spillCoordinates && <p>{spillCoordinates.latitude.toFixed(5)}, {spillCoordinates.longitude.toFixed(5)}</p>}</> : <><strong>{hoveredPoint.name || hoveredPoint.mmsi || 'AIS waypoint'}</strong><p>MMSI {hoveredPoint.mmsi || 'â€”'}</p>{hoveredPoint.timestamp && <p>{new Date(hoveredPoint.timestamp).toLocaleString()}</p>}{hoveredPoint.speed_knots !== undefined && <p>{hoveredPoint.speed_knots} kn Â· {hoveredPoint.course_deg}Â° Â· {hoveredPoint.vessel_type || 'Unknown'}</p>}</>}</div></Popup>}
     </Map>
     
-    <header className="absolute top-5 left-5 right-5 flex items-start justify-between pointer-events-none">
-      <div className="bg-black/65 backdrop-blur-md border border-white/[0.05] p-6 pointer-events-auto shadow-2xl">
+    
+    <div className="absolute top-5 right-5 pointer-events-auto z-10">
+      <Link to="/investigations" className="btn-ghost rounded-none text-[10px] shadow-none uppercase tracking-widest border border-white/20 px-6 py-3 bg-black/65 backdrop-blur-md hover:bg-white/10 transition-colors">ALL CASES</Link>
+    </div>
+
+    <div className={`absolute top-0 bottom-0 left-0 w-[480px] bg-black/80 backdrop-blur-2xl border-r border-white/[0.05] z-20 flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[30px_0_60px_rgba(0,0,0,0.5)] ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <button 
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="absolute -right-8 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-2xl border border-white/[0.05] border-l-0 w-8 h-24 flex items-center justify-center text-white/50 hover:text-white pointer-events-auto transition-colors shadow-[10px_0_20px_rgba(0,0,0,0.2)]"
+      >
+        <svg className={`w-4 h-4 transition-transform duration-500 ${isSidebarOpen ? 'rotate-0' : 'rotate-180'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div className="p-8 border-b border-white/[0.05] flex-shrink-0 pointer-events-auto bg-black/20">
         <p className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-muted)]">CASE {id?.slice(0, 8)}</p>
-        <h1 className="text-2xl font-light tracking-tight text-white mt-1">Spill investigation</h1>
+        <h1 className="text-3xl font-light tracking-tight text-white mt-1">Spill investigation</h1>
         <div className="flex items-center gap-4 mt-6">
           <span className="text-[10px] font-mono uppercase tracking-widest text-[white]">{caseStatus || status}</span>
           <span className="w-px h-3 bg-white/20"></span>
@@ -186,7 +201,7 @@ export default function InvestigationDetail() {
                 key={value} 
                 onClick={() => void changeCaseStatus(value)} 
                 className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 border transition-colors ${
-                  (caseStatus || inv?.status) === value ? 'border-white text-white' : 'border-transparent text-white/40 hover:text-white'
+                  (caseStatus || inv?.status) === value ? 'border-white text-white bg-white/10' : 'border-transparent text-white/40 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {value}
@@ -195,10 +210,9 @@ export default function InvestigationDetail() {
           </div>
         </div>
       </div>
-      <Link to="/investigations" className="btn-ghost rounded-none pointer-events-auto text-[10px] shadow-none uppercase tracking-widest border border-white/20 px-6 py-3 bg-black/65 backdrop-blur-md">ALL CASES</Link>
-    </header>
 
-    <aside className="absolute left-5 top-44 bottom-5 w-[min(420px,calc(100vw-40px))] overflow-y-auto pointer-events-auto bg-black/65 backdrop-blur-md border border-white/[0.05] p-6 space-y-8 shadow-2xl custom-scroll">
+      <div className="p-8 overflow-y-auto flex-1 custom-scroll space-y-10 pointer-events-auto">
+
       
       <section>
         <p className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-muted)] border-b border-white/[0.05] pb-2">01 // SATELLITE OBSERVATION</p>
@@ -217,8 +231,8 @@ export default function InvestigationDetail() {
       
       <section>
         <p className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-muted)] border-b border-white/[0.05] pb-2">02 // DRIFT ANALYSIS</p>
-        {!inv?.spill_info && job?.type === 'detect' && job?.status === 'completed' ? <p className="text-sm text-[var(--color-muted)] mt-4">No detection geometry available to run drift analysis.</p> : !inv?.spill_info && <p className="text-sm text-[var(--color-muted)] mt-4">Waiting for the satellite detector to return geometry…</p>}
-        {inv?.spill_info && !drift && <p className="text-sm text-white mt-4">Drift model is running automatically from the detected geometry…</p>}
+        {!inv?.spill_info && job?.type === 'detect' && job?.status === 'completed' ? <p className="text-sm text-[var(--color-muted)] mt-4">No detection geometry available to run drift analysis.</p> : !inv?.spill_info && <p className="text-sm text-[var(--color-muted)] mt-4">Waiting for the satellite detector to return geometryâ€¦</p>}
+        {inv?.spill_info && !drift && <p className="text-sm text-white mt-4">Drift model is running automatically from the detected geometryâ€¦</p>}
         {drift && 
           <div className="mt-4 border-l-2 border-white/20 pl-4">
             <div className="space-y-4">
@@ -228,11 +242,11 @@ export default function InvestigationDetail() {
               </div>
               <div>
                 <span className="text-[10px] uppercase font-mono tracking-widest text-[var(--color-muted)]">Apparent Region</span>
-                <p className="font-mono text-white text-sm mt-1">{spillCoordinates ? `${spillCoordinates.latitude.toFixed(5)}, ${spillCoordinates.longitude.toFixed(5)}` : '—'}</p>
+                <p className="font-mono text-white text-sm mt-1">{spillCoordinates ? `${spillCoordinates.latitude.toFixed(5)}, ${spillCoordinates.longitude.toFixed(5)}` : 'â€”'}</p>
               </div>
               <div className="flex justify-between items-end">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-[var(--color-muted)]">Drift Distance</span>
-                <strong className="font-mono text-white text-sm">{driftDistanceKm ? `${driftDistanceKm.toFixed(2)} km` : '—'}</strong>
+                <strong className="font-mono text-white text-sm">{driftDistanceKm ? `${driftDistanceKm.toFixed(2)} km` : 'â€”'}</strong>
               </div>
               <div className="flex justify-between items-end">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-[var(--color-muted)]">Origin Uncert.</span>
@@ -253,7 +267,7 @@ export default function InvestigationDetail() {
               <table className="w-full text-left text-xs">
                 <thead className="bg-white/[0.02]">
                   <tr className="border-b border-white/10 text-[10px] font-mono uppercase tracking-widest text-[var(--color-muted)]">
-                    <th className="p-2 font-normal">MMSI</th><th className="p-2 font-normal">Time</th><th className="p-2 font-normal">Lat</th><th className="p-2 font-normal">Lon</th><th className="p-2 font-normal">kn</th><th className="p-2 font-normal">°</th>
+                    <th className="p-2 font-normal">MMSI</th><th className="p-2 font-normal">Time</th><th className="p-2 font-normal">Lat</th><th className="p-2 font-normal">Lon</th><th className="p-2 font-normal">kn</th><th className="p-2 font-normal">Â°</th>
                   </tr>
                 </thead>
                 <tbody className="font-mono">
@@ -303,7 +317,7 @@ export default function InvestigationDetail() {
           </div>
         </section>
       )}
-    </aside>
+    </div></div>
     
     <div className="absolute right-5 bottom-5 bg-black/65 backdrop-blur-md border border-white/[0.05] p-4 pointer-events-auto">
       <div className="space-y-3 font-mono text-[10px] uppercase tracking-widest text-white/70">
@@ -316,3 +330,9 @@ export default function InvestigationDetail() {
     </div>
   </div>
 }
+
+
+
+
+
+

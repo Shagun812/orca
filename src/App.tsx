@@ -4,6 +4,7 @@ import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import Digest from './pages/Digest'
 import Investigations from './pages/Investigations'
 import InvestigationDetail from './pages/InvestigationDetail'
 import VesselDetail from './pages/VesselDetail'
@@ -44,6 +45,7 @@ export default function App() {
         {/* Authenticated app shell */}
         <Route element={<AppShell />}>
           <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
+          <Route path="/digest" element={<PageWrapper><Digest /></PageWrapper>} />
           <Route path="/investigations" element={<PageWrapper><Investigations /></PageWrapper>} />
           <Route path="/investigations/:id" element={<PageWrapper><InvestigationDetail /></PageWrapper>} />
           <Route path="/vessels/:id" element={<PageWrapper><VesselDetail /></PageWrapper>} />

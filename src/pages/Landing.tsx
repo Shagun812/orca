@@ -60,7 +60,7 @@ export default function Landing() {
       />
 
       <div className="min-h-screen bg-transparent overflow-x-hidden selection:bg-white selection:text-black">
-        {/* ──── Nav ──── */}
+        {/* â”€â”€â”€â”€ Nav â”€â”€â”€â”€ */}
         <header className={`fixed top-0 w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-black/40 backdrop-blur-2xl border-b border-white/[0.04] py-0' : 'bg-transparent border-transparent py-2'}`}>
           <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <Logo />
@@ -85,7 +85,7 @@ export default function Landing() {
           </div>
         </header>
 
-        {/* ──── Hero ──── */}
+        {/* â”€â”€â”€â”€ Hero â”€â”€â”€â”€ */}
         <section id="hero" className="relative min-h-screen flex items-center pt-32 pb-24 px-6 overflow-hidden">
           {/* Dynamic Abstract Background Elements */}
           <div className="absolute inset-0 pointer-events-none z-0">
@@ -133,7 +133,7 @@ Trace the vessel"
         </section>
 
 
-        {/* ──── Dynamic Features Section ──── */}
+        {/* â”€â”€â”€â”€ Dynamic Features Section â”€â”€â”€â”€ */}
         <section id="features" className="py-32 px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-400 ease-out">
@@ -151,9 +151,9 @@ Trace the vessel"
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-wide group-hover:text-white/90 transition-colors">Satellite Detection</h3>
+                <h3 className="text-xl font-bold text-white mb-4 tracking-wide group-hover:text-white/90 transition-colors">01 — Detection</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Automated Sentinel-1 SAR analysis identifies anomalies on the ocean surface. Our computer vision models differentiate oil slicks from look-alikes.
+                  Sentinel-1 SAR imagery is analyzed to detect and characterize potential oil slicks.
                 </p>
               </div>
 
@@ -164,9 +164,9 @@ Trace the vessel"
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-wide group-hover:text-white/90 transition-colors">Reverse Drift Modelling</h3>
+                <h3 className="text-xl font-bold text-white mb-4 tracking-wide group-hover:text-white/90 transition-colors">02 — Tracing</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Using real-time oceanic currents and wind data, we calculate the precise origin point of the spill by simulating its drift backwards in time.
+                  Wind and ocean-current data are used to simulate the spill backward and estimate its probable origin.
                 </p>
               </div>
 
@@ -189,8 +189,8 @@ Trace the vessel"
 
 
 
-        {/* ──── Workflow Section ──── */}
-        <section id="workflow" className="py-32 px-6 relative z-40 border-t border-white/[0.05]">
+        {/* â”€â”€â”€â”€ Workflow Section â”€â”€â”€â”€ */}
+        <section id="workflow" className="py-32 px-6 relative z-50 border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-24 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-400 ease-out">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">Operational Workflow</h2>
@@ -206,26 +206,28 @@ Trace the vessel"
               {/* Step 01 */}
               <div className="relative z-10 hover:z-50 group p-8 border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl hover:border-white/30 hover:bg-white/[0.06] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out reveal-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: '100ms' }}>
                 <div className="text-5xl font-light text-white/[0.08] group-hover:text-white/80 transition-all duration-300 mb-6 font-mono group-hover:scale-105 origin-left">01</div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Ingestion</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Detection</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Continuous, automated monitoring of Sentinel-1 SAR imagery and global AIS transponder data streams.
+                  Sentinel-1 SAR imagery is analyzed to detect and characterize potential oil slicks.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Ingestion Deep Dive</h4>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">01 — Detection</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    Our ingestion engine pulls high-resolution SAR tiles from Copernicus Sentinel-1 via automated pipelines, alongside raw kinematic data from global AIS receivers. Data is normalized and partitioned into spatio-temporal blocks for low-latency processing.
+                    Finding potential oil spills from satellite imagery.
                   </p>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    We maintain redundant connections to the European Space Agency's (ESA) open data hubs, ensuring that as soon as a satellite pass over a region of interest is completed, the Level-1 Ground Range Detected (GRD) products are immediately queued. Simultaneously, terrestrial and satellite-based AIS networks (via exactEarth & Spire) stream vessel transponder data at 1Hz frequencies into our Kafka clusters.
+                    ORCA uses Sentinel-1 SAR imagery to identify areas that may contain oil slicks, even when optical imagery is affected by clouds or limited visibility.
                   </p>
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// SOURCE: SENTINEL-1 SAR (C-BAND)</li>
-                    <li>// SOURCE: SATELLITE & TERRESTRIAL AIS</li>
-                    <li>// FREQUENCY: CONTINUOUS STREAMING</li>
-                    <li>// FORMAT: GEOJSON, NETCDF, NMEA 0183</li>
-                    <li>// PIPELINE: APACHE KAFKA & SPARK</li>
+                    <li>// SAR IMAGE PREPROCESSING</li>
+                    <li>// YOLO-BASED OIL-SPILL DETECTION</li>
+                    <li>// OIL PROBABILITY ESTIMATION</li>
+                    <li>// SLICK SEGMENTATION</li>
+                    <li>// SPILL POLYGON AND CENTROID EXTRACTION</li>
+                    <li>// SPILL AREA AND DETECTION CONFIDENCE CALCULATION</li>
+                    <li>// OUTPUT: DETECTED SLICK, AREA, LOCATION, CONFIDENCE</li>
                   </ul>
                 </div>
               </div>
@@ -233,26 +235,28 @@ Trace the vessel"
               {/* Step 02 */}
               <div className="relative z-10 hover:z-50 group p-8 border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl hover:border-white/30 hover:bg-white/[0.06] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out reveal-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: '300ms' }}>
                 <div className="text-5xl font-light text-white/[0.08] group-hover:text-white/80 transition-all duration-300 mb-6 font-mono group-hover:scale-105 origin-left">02</div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Analysis</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Tracing</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Proprietary computer vision models analyze raw signals to detect anomalies and probabilistically classify oil slicks.
+                  Wind and ocean-current data are used to simulate the spill backward and estimate its probable origin.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Analysis Deep Dive</h4>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">02 — Tracing</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    Multi-stage convolutional neural networks (CNNs) segment the SAR imagery, identifying localized backscatter anomalies. A secondary classification layer distinguishes biological slicks, wind shadows, and ship wakes from confirmed hydrocarbon spills.
+                    Reconstructing where the spill may have originated.
                   </p>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    The core engine leverages a modified U-Net architecture trained on tens of thousands of confirmed spill incidents. By analyzing the VV and VH polarization bands, the model accurately calculates the surface roughness depression caused by oil films. Adaptive thresholding algorithms run in parallel to filter out False Positives caused by low-wind areas or ocean upwelling, ensuring that only high-confidence dark formations proceed to the attribution stage.
+                    After detecting the slick, ORCA combines wind and ocean-current data with the observed spill geometry and estimated spill age. A physics-based backward particle-advection model simulates how the observed slick could have moved through the ocean.
                   </p>
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// ENGINE: CUSTOM CNN ENSEMBLE (U-NET)</li>
-                    <li>// ACCURACY: {'>'}94.3% TRUE POSITIVE RATE</li>
-                    <li>// FALSE ALARM RATE: {'<'}0.5%</li>
-                    <li>// LATENCY: {'<'}500ms / TILE PROCESSING</li>
-                    <li>// HARDWARE: NVIDIA A100 CLUSTER</li>
+                    <li>// WIND AND CURRENT INPUTS</li>
+                    <li>// BACKWARD DRIFT SIMULATION</li>
+                    <li>// MULTIPLE POSSIBLE PARTICLE PATHS</li>
+                    <li>// PROBABLE ORIGIN ESTIMATION</li>
+                    <li>// RELEASE-TIME WINDOW ESTIMATION</li>
+                    <li>// ORIGIN PROBABILITY FIELD</li>
+                    <li>// OUTPUT: ORIGIN ZONE, RELEASE WINDOW, ORIGIN CONFIDENCE</li>
                   </ul>
                 </div>
               </div>
@@ -260,36 +264,43 @@ Trace the vessel"
               {/* Step 03 */}
               <div className="relative z-10 hover:z-50 group p-8 border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl hover:border-white/30 hover:bg-white/[0.06] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out reveal-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: '500ms' }}>
                 <div className="text-5xl font-light text-white/[0.08] group-hover:text-white/80 transition-all duration-300 mb-6 font-mono group-hover:scale-105 origin-left">03</div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Attribution</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Correlation</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Reverse drift modelling simulates backward trajectories to calculate origin points, cross-referencing historical AIS for definitive attribution.
+                  AIS vessel movements are analyzed around the estimated origin and time window to rank potential source vessels.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Attribution Deep Dive</h4>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">03 — Correlation</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    Integrating ERA5 wind datasets and HYCOM oceanic current vectors, we run reverse Lagrangian particle dispersion models to trace the slick back to its origin. We then intersect this spatiotemporal envelope with historical AIS tracks to identify the offending vessel.
+                    Connecting the probable origin to vessel movements.
                   </p>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    Because oil does not sit still on the ocean surface, knowing where a spill is currently located isn't enough to catch the culprit. Our models simulate hundreds of thousands of particles drifting backwards in time up to 72 hours, using advanced environmental forcing. The resulting probability heatmaps are cross-checked against billions of historical AIS location pings to find ships whose trajectories align perfectly with the spill's origin time and location, providing irrefutable forensic evidence for prosecution.
+                    ORCA analyzes AIS vessel positions around the estimated origin and release window. Instead of choosing the nearest vessel, it evaluates multiple evidence signals. These signals are combined into an evidence-based compatibility score to rank potential source vessels.
                   </p>
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// MODEL: REVERSE LAGRANGIAN DRIFT</li>
-                    <li>// FORCING: HYCOM + ECMWF ERA5</li>
-                    <li>// TIME HORIZON: UP TO 72 HOURS HINDCAST</li>
-                    <li>// CONFIDENCE: PROBABILISTIC MATCHING (KDE)</li>
-                    <li>// OUTPUT: EVIDENTIARY REPORT GENERATION</li>
+                    <li>// DISTANCE FROM PROBABLE ORIGIN</li>
+                    <li>// PRESENCE DURING THE ESTIMATED RELEASE WINDOW</li>
+                    <li>// HEADING AND MOVEMENT DIRECTION</li>
+                    <li>// VESSEL TRAJECTORY COMPATIBILITY</li>
+                    <li>// TIME SPENT NEAR THE ORIGIN</li>
+                    <li>// AIS DATA QUALITY</li>
+                    <li>// OUTPUT: CANDIDATE VESSELS, EVIDENCE SCORE, EXPLANATION</li>
                   </ul>
                 </div>
               </div>
             </div>
+
+            <div className="mt-16 text-center reveal-on-scroll opacity-0 translate-y-8 transition-all duration-400 ease-out" style={{ transitionDelay: '700ms' }}>
+              <p className="text-[var(--color-muted)] text-sm tracking-widest font-mono uppercase">
+                ORCA Pipeline: Satellite Detection → Spill Characterization → Backward Drift → Probable Origin → AIS Correlation → Evidence Fusion → Candidate Ranking
+              </p>
+            </div>
           </div>
         </section>
 
-
-        {/* ──── Architecture Section ──── */}
-        <section id="architecture" className="py-32 px-6 relative z-30 border-t border-white/[0.05]">
+        {/* Ã¢â€“Â  Architecture Section Ã¢â€“Â  */}
+        <section id="architecture" className="py-32 px-6 relative z-40 border-t border-white/[0.05]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-24 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-400 ease-out md:text-right flex flex-col md:items-end">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">System Architecture</h2>
@@ -303,94 +314,183 @@ Trace the vessel"
                 <div className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-mono group-hover:text-white transition-colors duration-300">Layer 1</div>
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Data Layer</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Real-time ingestion pipelines querying satellite APIs, global oceanic current databases, and high-frequency AIS transponder streams.
+                  Satellite imagery, wind, ocean currents and AIS vessel data provide the inputs.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Data Layer Specs</h4>
-                  <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    Our multi-tenant data ingress layer handles structured and unstructured streams globally, utilizing Kafka brokers to stream high-frequency Automatic Identification System (AIS) messages in real-time. Satellite imagery from Copernicus (Sentinel-1/2) is pulled asynchronously and cached at edge locations for rapid processing.
-                  </p>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">LAYER 1 — DATA INPUTS</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    Continuous polling of meteorological datasets (NOAA, ECMWF ERA5) and hydrodynamic currents (HYCOM) ensures our models always operate on the latest oceanic environmental boundary conditions, synchronized precisely with the SAR acquisition timestamps.
+                    The information ORCA needs.
                   </p>
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// THROUGHPUT: ~4.2M EVENTS/SEC</li>
-                    <li>// STORAGE: CLOUD BLOB (S3-COMPATIBLE)</li>
-                    <li>// DATABASES: POSTGRES, REDIS, ELASTICSEARCH</li>
-                    <li>// LATENCY: {'<'}50MS END-TO-END</li>
+                    <li>// SENTINEL-1 SAR: Used to detect and characterize potential oil slicks.</li>
+                    <li>// WIND DATA: Helps estimate how the slick could have moved.</li>
+                    <li>// OCEAN CURRENT DATA: Provides the physical movement of water needed for drift simulation.</li>
+                    <li>// AIS VESSEL DATA: Provides vessel positions, movement and identity information for correlation.</li>
+                    <li>// OIL-SLICK / LOOK-ALIKE DATASETS: Used for model development and evaluation.</li>
                   </ul>
                 </div>
               </div>
 
               <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-8 pt-8 group hover:border-white/30 hover:bg-white/[0.06] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out reveal-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: '300ms' }}>
                 <div className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-mono group-hover:text-white transition-colors duration-300">Layer 2</div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Compute Engine</h3>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">ORCA Intelligence</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  Scalable machine learning inference nodes running advanced computer vision and fluid dynamics simulations.
+                  ML-based detection, drift simulation, origin estimation, AIS correlation and evidence scoring process the data.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Compute Engine Specs</h4>
-                  <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    The core intelligence relies on containerized GPU-accelerated microservices utilizing PyTorch and specialized oceanographic frameworks. As soon as a SAR tile is downloaded, it triggers a serverless inference execution via Kubernetes, distributing the workload across a cluster of A100 nodes.
-                  </p>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">LAYER 2 — INTELLIGENCE</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    For attribution, the engine runs Monte Carlo reverse drift simulations, spawning millions of virtual particles to model dispersion under complex stochastic weather scenarios, generating high-fidelity probabilistic source envelopes.
+                    Turning raw data into investigation evidence.
                   </p>
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// FRAMEWORK: PYTORCH, TENSORFLOW</li>
-                    <li>// INFRASTRUCTURE: KUBERNETES EKS</li>
-                    <li>// SCALING: AUTO-SCALABLE SPOT INSTANCES</li>
-                    <li>// COMPUTE: 4X NVIDIA A100 TENSOR CORES</li>
+                    <li>// 1. OIL DETECTION: YOLO-based detection identifies potential slicks from SAR.</li>
+                    <li>// 2. SLICK CHARACTERIZATION: Extracts spill polygon, area, centroid.</li>
+                    <li>// 3. DRIFT SIMULATION: Physics-based particle advection models the movement.</li>
+                    <li>// 4. ORIGIN ESTIMATION: Generates a probable origin zone and release window.</li>
+                    <li>// 5. AIS CANDIDATE GENERATION: Spatial and temporal filtering of vessels.</li>
+                    <li>// 6. VESSEL COMPATIBILITY: XGBoost scoring for compatibility.</li>
+                    <li>// 7. EVIDENCE FUSION: Combines available signals into candidate ranking.</li>
                   </ul>
                 </div>
               </div>
 
               <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl p-8 pt-8 group md:col-span-2 lg:col-span-1 hover:border-white/30 hover:bg-white/[0.06] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out reveal-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: '500ms' }}>
                 <div className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 font-mono group-hover:text-white transition-colors duration-300">Layer 3</div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Client Interface</h3>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors">Investigation Dashboard</h3>
                 <p className="text-[var(--color-muted)] text-sm leading-relaxed group-hover:text-white/60 transition-colors">
-                  A high-performance React frontend serving map-based visualizations and low-latency interaction via WebSocket APIs.
+                  An interactive map shows the oil slick, probable origin, vessel trajectories, candidate ranking and supporting evidence.
                 </p>
 
                 {/* Deep Dive Floating Popover */}
-                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[16px] before:left-0 before:w-full before:h-[16px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-500 delay-0 group-hover:delay-[1500ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[400px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
-                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">Client Interface Specs</h4>
-                  <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-3">
-                    The intelligence dashboard is built entirely with modern React and TypeScript, leveraging Mapbox GL JS for hardware-accelerated rendering of vector tiles and polygons directly in the browser at 60 frames per second.
-                  </p>
+                <div className="absolute top-[calc(100%+16px)] before:absolute before:-top-[24px] before:left-0 before:w-full before:h-[24px] before:content-[''] left-0 w-full sm:w-[130%] sm:-left-[15%] bg-[#050505] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 delay-[300ms] group-hover:delay-[100ms] flex flex-col justify-center border border-white/20 z-[999] shadow-[0_30px_100px_rgba(0,0,0,0.9)] max-h-[500px] overflow-y-auto custom-scrollbar" data-lenis-prevent="true">
+                  <h4 className="text-white font-bold mb-3 tracking-wide text-lg">LAYER 3 — DASHBOARD</h4>
                   <p className="text-[var(--color-muted)] text-xs leading-relaxed mb-5">
-                    Bidirectional WebSocket connections ensure investigators receive immediate alerts when new slicks are detected or attribution calculations finish, establishing a live, real-time command center for marine authorities.
+                    What the investigator sees.
                   </p>
+                  
                   <ul className="text-[10px] text-white/50 font-mono space-y-2 border-l border-white/20 pl-3">
-                    <li>// FRONTEND: REACT 18 + TYPESCRIPT</li>
-                    <li>// RENDERING: MAPBOX GL (WEBGL)</li>
-                    <li>// TRANSPORT: WSS (WEB SOCKET SECURE)</li>
-                    <li>// STYLING: TAILWIND CSS</li>
+                    <li>// INTERACTIVE MAP: Satellite imagery, detected slick, probable origin heatmap, trajectories, wind vectors.</li>
+                    <li>// VESSEL INTELLIGENCE: AIS vessel positions, trajectories, candidate vessels, compatibility scores.</li>
+                    <li>// EVIDENCE PANEL: Spatial, temporal, and trajectory evidence, origin compatibility, AIS quality.</li>
                   </ul>
+                  <p className="text-[var(--color-muted)] text-xs leading-relaxed mt-5">
+                    ORCA converts disconnected data sources into one workflow: DATA → DETECTION → PHYSICS → AIS → EVIDENCE → INVESTIGATION
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Ã¢â€“Â  Prototype Status Section Ã¢â€“Â  */}
+        <section id="status" className="py-32 px-6 relative z-30 border-t border-white/[0.05]">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-16 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-400 ease-out text-center">
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">Prototype Status</h2>
+              <p className="text-[var(--color-muted)] max-w-2xl mx-auto text-lg mb-12">
+                Current progress and implementation state of the ORCA platform.
+              </p>
+              
+              {/* Disclaimer */}
+              <div className="max-w-4xl mx-auto rounded-2xl bg-red-950/40 border border-red-500/20 py-5 px-8 text-center z-10 relative backdrop-blur-xl shadow-[0_0_40px_rgba(239,68,68,0.05)] transition-all hover:bg-red-900/40 hover:border-red-500/40">
+                <p className="text-red-200/90 font-medium tracking-wider text-sm flex items-center justify-center gap-3 uppercase">
+                  Disclaimer: The AI Model is currently not available for public access at the moment
+                </p>
+              </div>
+            </div>
 
-        {/* ──── Footer ──── */}
-        {/* Disclaimer */}
-        <div className="max-w-4xl mx-auto mb-20 rounded-2xl bg-red-950/40 border border-red-500/20 py-5 px-8 text-center z-50 relative backdrop-blur-xl shadow-[0_0_40px_rgba(239,68,68,0.05)] transition-all hover:bg-red-900/40 hover:border-red-500/40">
-          <p className="text-red-200/90 font-medium tracking-wider text-sm flex items-center justify-center gap-3 uppercase">
-            <span className="text-lg">⚠️</span> Disclaimer: The AI Model is currently not available for public access at the moment
-          </p>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">01 — OIL-SPILL DETECTION</h3>
+                  <span className="text-green-400 border border-green-400/20 bg-green-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Implemented
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Sentinel-1 imagery → ML detection → slick localization</p>
+                
+                
+              </div>
+
+              {/* Card 2 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">02 — DRIFT & ORIGIN ANALYSIS</h3>
+                  <span className="text-green-400 border border-green-400/20 bg-green-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Implemented
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Wind/current data → backward simulation → probable origin</p>
+                
+                
+              </div>
+
+              {/* Card 3 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">03 — AIS CORRELATION</h3>
+                  <span className="text-amber-400 border border-amber-400/20 bg-amber-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Prototype
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Vessel filtering and candidate generation</p>
+                
+                
+              </div>
+
+              {/* Card 4 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">04 — EVIDENCE-BASED VESSEL SCORING</h3>
+                  <span className="text-green-400 border border-green-400/20 bg-green-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Implemented
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Spatial + temporal + trajectory compatibility</p>
+                
+                
+              </div>
+
+              {/* Card 5 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">05 — GIS INVESTIGATION DASHBOARD</h3>
+                  <span className="text-green-400 border border-green-400/20 bg-green-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Implemented
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Spill, origin, trajectories and candidate ranking</p>
+                
+                
+              </div>
+
+              {/* Card 6 */}
+              <div className="relative z-10 hover:z-50 border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-sm flex flex-col gap-4 group hover:border-white/20 transition-all duration-300">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-white font-bold text-sm tracking-widest group-hover:text-white/90">06 — REAL-WORLD AIS VALIDATION</h3>
+                  <span className="text-blue-400 border border-blue-400/20 bg-blue-400/10 px-2 py-1 text-[10px] uppercase font-mono rounded shrink-0">
+                    Next Step
+                  </span>
+                </div>
+                <p className="text-[var(--color-muted)] text-sm group-hover:text-white/60">Validate ORCA using historical real-world AIS data</p>
+                
+                
+              </div>
+            </div>
+          </div>
+        </section>
+{/* ■ Footer ■ */}
 
         <footer className="bg-white/[0.02] backdrop-blur-xl pt-24 pb-12 px-6 relative z-10 border-t border-white/[0.06]">
           <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
             <div className="w-full flex flex-col items-center justify-center gap-6 text-sm text-[var(--color-muted)]">
               <Logo showText={false} />
-              <span>© 2026 ORCA. All rights reserved.</span>
+              <span>Â© 2026 ORCA. All rights reserved.</span>
             </div>
 
             <div className="w-full pt-6 flex flex-col items-center text-center">
@@ -406,6 +506,14 @@ Trace the vessel"
     </ReactLenis>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
