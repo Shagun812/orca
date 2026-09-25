@@ -1,4 +1,4 @@
-
+﻿
 from app.ais.features import calculate_features
 from app.ais.filtering import filter_positions
 from app.ais.ingestion import ingest
@@ -9,12 +9,12 @@ from app.schemas.attribution import AttributionRequest, AttributionResponse
 
 def rank_candidates(request: AttributionRequest) -> AttributionResponse:
     positions = ingest(request.ais_positions)
-    start = request.time_window["start"]
-    end = request.time_window["end"]
+    start = request.time_window.get("start", request.time_window.get("window_start"))
+    end = request.time_window.get("end", request.time_window.get("window_end"))
 
     filtered = filter_positions(
         positions,
-        request.origin_zone,
+        request.origin_zone.get("polygon", request.origin_zone),
         start,
         end,
         request.search_buffer_km,
@@ -27,8 +27,8 @@ def rank_candidates(request: AttributionRequest) -> AttributionResponse:
     for mmsi, vessel_positions in grouped.items():
         features = calculate_features(
             vessel_positions,
-            center["latitude"],
-            center["longitude"],
+            center.get("latitude", 0),
+            center.get("longitude", 0),
             request.event_time,
         )
         score, evidence = score_candidate(features)
@@ -40,7 +40,7 @@ def rank_candidates(request: AttributionRequest) -> AttributionResponse:
             "evidence": evidence,
             "features": features,
             "positions_used": len(vessel_positions),
-            # This is source AIS data, preserved for the map—not an inferred route.
+            # This is source AIS data, preserved for the mapâ€”not an inferred route.
             "trajectory": [position.model_dump() for position in vessel_positions],
         })
 
@@ -54,3 +54,7 @@ def rank_candidates(request: AttributionRequest) -> AttributionResponse:
         candidates=candidates,
         filtered_position_count=len(filtered),
     )
+
+
+
+
