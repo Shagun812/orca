@@ -1,4 +1,4 @@
-use axum::{extract::{Path, State}, http::StatusCode, Json};
+﻿use axum::{extract::{Path, State}, http::StatusCode, Json};
 use sqlx::PgPool;
 use uuid::Uuid;
 
@@ -11,7 +11,13 @@ pub async fn list(
     let rows = sqlx::query_as::<_, Investigation>(
         r#"SELECT i.id, i.user_id, i.title, i.description, i.status, i.created_at, i.updated_at,
             (SELECT row_to_json(s) FROM (
-                SELECT sp.prediction_id, sp.confidence, sp.area_km2
+                SELECT sp.prediction_id, sp.confidence, sp.area_km2,
+                       ST_AsGeoJSON(sp.geometry)::json AS geometry,
+                       COALESCE((SELECT json_agg(cv ORDER BY cv.rank) FROM (
+                           SELECT c.mmsi, c.rank, c.score, v.vessel_name
+                           FROM candidate_vessels c LEFT JOIN vessels v ON v.mmsi = c.mmsi
+                           WHERE c.spill_id = sp.id
+                       ) cv), '[]'::json) AS vessel_rankings
                 FROM spills sp WHERE sp.investigation_id = i.id
                 ORDER BY sp.created_at DESC LIMIT 1
             ) s) AS spill_info
@@ -121,3 +127,4 @@ pub async fn delete(
 
     Ok(StatusCode::NO_CONTENT)
 }
+
