@@ -709,15 +709,8 @@ Potential extensions include:
 
 ---
 
-#  Running the Project
 
-### Clone
-
-```bash
-git clone https://github.com/Shagun812/orca.git
-```
-
-### For starting the website:
+### For starting the website / Running the project:
 
 Follow [Instructions.md](instructions.md)
 
