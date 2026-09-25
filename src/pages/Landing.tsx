@@ -75,6 +75,21 @@ export default function Landing() {
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
                 </button>
               </nav>
+
+                <div className="relative group hidden md:block">
+                  <button className="text-[10px] font-bold text-[var(--color-muted-light)] hover:text-white transition-colors tracking-[0.2em] uppercase flex items-center gap-1 h-full py-2">
+                    GitHub
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className="absolute top-full right-0 mt-4 w-48 bg-[#0a0a0a] border border-white/10 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-[999] shadow-2xl flex flex-col translate-y-2 group-hover:translate-y-0 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
+                    <a href="https://github.com/bloodxsr/orca-frontend.git" target="_blank" rel="noopener noreferrer" className="px-4 py-3 text-xs text-[var(--color-muted)] hover:text-white hover:bg-white/5 transition-colors border-b border-white/5">Frontend Repository</a>
+                    <a href="https://github.com/bloodxsr/orca-backend.git" target="_blank" rel="noopener noreferrer" className="px-4 py-3 text-xs text-[var(--color-muted)] hover:text-white hover:bg-white/5 transition-colors border-b border-white/5">Backend Repository</a>
+                    <a href="https://github.com/bloodxsr/orca-ai.git" target="_blank" rel="noopener noreferrer" className="px-4 py-3 text-xs text-[var(--color-muted)] hover:text-white hover:bg-white/5 transition-colors">AI Engine Repository</a>
+                  </div>
+                </div>
+
               <Link to="/login" className="px-6 py-2.5 bg-white text-black text-xs font-semibold hover:bg-gray-200 transition-colors flex items-center gap-2">
                 Launch App
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
